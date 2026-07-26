@@ -30,6 +30,7 @@ const Catalog = {
     versions: [],
     availability: [], // 'ready' | 'order'
     flags: [], // 'bestSeller' | 'newArrival' | 'personalization'
+    favoritesOnly: false,
     sort: 'featured',
     limit: 0 // 0 = sem limite
   },
@@ -122,6 +123,14 @@ const Catalog = {
       });
     });
 
+    const favoritesOnly = document.getElementById('filterFavoritesOnly');
+    if (favoritesOnly) {
+      favoritesOnly.addEventListener('change', () => {
+        this.state.favoritesOnly = favoritesOnly.checked;
+        this.render();
+      });
+    }
+
     const clear = document.getElementById('clearFilters');
     if (clear) clear.addEventListener('click', () => this.clearFilters());
 
@@ -150,6 +159,20 @@ const Catalog = {
       const search = document.getElementById('searchInput');
       if (search) search.value = query;
     }
+    // "Promoções" no menu: reaproveita os destaques reais do catálogo
+    // (mais vendidos + lançamentos), sem inventar nenhum desconto novo.
+    if (params.get('promo') === '1') {
+      this.state.flags = ['bestSeller', 'newArrival'];
+      ['bestSeller', 'newArrival'].forEach((value) => {
+        const input = document.querySelector(`[data-filter-group="flags"][value="${value}"]`);
+        if (input) input.checked = true;
+      });
+    }
+    if (params.get('favoritos') === '1') {
+      this.state.favoritesOnly = true;
+      const input = document.getElementById('filterFavoritesOnly');
+      if (input) input.checked = true;
+    }
   },
 
   clearFilters() {
@@ -157,7 +180,10 @@ const Catalog = {
     ['categories', 'teams', 'seasons', 'models', 'sizes', 'versions', 'availability', 'flags'].forEach((k) => {
       this.state[k] = [];
     });
+    this.state.favoritesOnly = false;
     document.querySelectorAll('[data-filter-group]').forEach((i) => { i.checked = false; });
+    const favoritesOnly = document.getElementById('filterFavoritesOnly');
+    if (favoritesOnly) favoritesOnly.checked = false;
     const search = document.getElementById('searchInput');
     if (search) search.value = '';
     this.render();
@@ -201,6 +227,8 @@ const Catalog = {
     if (s.flags.includes('bestSeller') && !product.bestSeller) return false;
     if (s.flags.includes('newArrival') && !product.newArrival) return false;
     if (s.flags.includes('personalization') && !product.personalizationAvailable) return false;
+
+    if (s.favoritesOnly && !Favorites.has(product.id)) return false;
 
     return true;
   },
@@ -261,6 +289,7 @@ const Catalog = {
     this.renderCount(total);
     this.renderChips();
     this.syncUrl();
+    document.dispatchEvent(new CustomEvent('catalog:rendered', { detail: { total } }));
   },
 
   renderCount(total) {
@@ -349,6 +378,7 @@ const Catalog = {
     const params = new URLSearchParams();
     if (this.state.categories.length === 1) params.set('categoria', this.state.categories[0]);
     if (this.state.query) params.set('busca', this.state.query);
+    if (this.state.favoritesOnly) params.set('favoritos', '1');
     const qs = params.toString();
     const url = `${window.location.pathname}${qs ? `?${qs}` : ''}${window.location.hash}`;
     window.history.replaceState(null, '', url);

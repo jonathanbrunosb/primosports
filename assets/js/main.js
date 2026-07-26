@@ -15,7 +15,9 @@ const ICON_PATHS = {
   truck: 'M3 5h11v9H3V5Zm12 3h3.5L21 11v3h-6V8ZM6.5 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm11 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z',
   clock: 'M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm1 5h-2v6l5 3 1-1.7-4-2.3V7Z',
   box: 'M12 2 3 6.5v11L12 22l9-4.5v-11L12 2Zm0 2.2 6.4 3.2L12 10.6 5.6 7.4 12 4.2Z',
-  chat: 'M4 3h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H8l-4 4V5a2 2 0 0 1 2-2Z'
+  chat: 'M4 3h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H8l-4 4V5a2 2 0 0 1 2-2Z',
+  exchange: 'M7 3 3 7l4 4V8h9V6H7V3Zm10 6-4 4v3H4v2h9v3l4-4-4-4Z',
+  bolt: 'M13 2 3 14h6l-2 8 10-12h-6l2-8Z'
 };
 
 /** Cria um <svg> a partir do catálogo de ícones. */
@@ -290,6 +292,53 @@ const Drawer = {
   }
 };
 
+/* -------------------------------------------------- Carrossel de destaques */
+function initDestaquesCarousel() {
+  const grid = document.getElementById('productGrid');
+  if (!grid || !grid.classList.contains('carousel-grid')) return;
+
+  const prev = document.getElementById('destaquesPrev');
+  const next = document.getElementById('destaquesNext');
+  const dotsEl = document.getElementById('destaquesDots');
+  const cards = Array.from(grid.children);
+  if (!cards.length) return;
+
+  const cardWidth = () => cards[0].getBoundingClientRect().width + 20; // + gap aproximado
+
+  const updateArrows = () => {
+    const max = grid.scrollWidth - grid.clientWidth - 4;
+    if (prev) prev.disabled = grid.scrollLeft <= 4;
+    if (next) next.disabled = grid.scrollLeft >= max;
+    if (dotsEl) {
+      const index = Math.round(grid.scrollLeft / cardWidth());
+      dotsEl.querySelectorAll('button').forEach((b, i) => b.setAttribute('aria-current', String(i === index)));
+    }
+  };
+
+  prev?.addEventListener('click', () => grid.scrollBy({ left: -cardWidth(), behavior: 'smooth' }));
+  next?.addEventListener('click', () => grid.scrollBy({ left: cardWidth(), behavior: 'smooth' }));
+
+  let ticking = false;
+  grid.addEventListener('scroll', () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => { updateArrows(); ticking = false; });
+  });
+
+  if (dotsEl) {
+    dotsEl.replaceChildren();
+    cards.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.setAttribute('aria-label', `Ir para camisa ${i + 1}`);
+      dot.addEventListener('click', () => grid.scrollTo({ left: cardWidth() * i, behavior: 'smooth' }));
+      dotsEl.appendChild(dot);
+    });
+  }
+
+  updateArrows();
+}
+
 /* --------------------------------------------------------------- Cabeçalho */
 function initHeader() {
   const toggle = document.querySelector('.menu-toggle');
@@ -320,6 +369,7 @@ function initHeader() {
   }
 
   document.getElementById('cartBtn')?.prepend(icon('cart'));
+  document.getElementById('favoritesBtn')?.prepend(icon('heart'));
   const searchBtn = document.getElementById('searchBtn');
   if (searchBtn) {
     searchBtn.appendChild(icon('search'));
@@ -353,7 +403,8 @@ function applyBusinessConfig() {
     el.replaceChildren();
     BUSINESS_CONFIG.paymentMethods.forEach((method) => {
       const span = document.createElement('span');
-      span.textContent = method;
+      span.append(icon(method === 'Pix' ? 'bolt' : 'card'), document.createElement('b'));
+      span.querySelector('b').textContent = method;
       el.appendChild(span);
     });
   });
@@ -452,6 +503,15 @@ function warnPlaceholderNumber() {
   }
 }
 
+/** Badge de favoritos no cabeçalho, igual ao do carrinho. */
+function renderFavoritesBadge() {
+  const badge = document.getElementById('favoritesCount');
+  if (!badge) return;
+  const count = Favorites.ids.length;
+  badge.textContent = String(count);
+  badge.hidden = count === 0;
+}
+
 /* ------------------------------------------------------------------- Boot */
 document.addEventListener('DOMContentLoaded', () => {
   applyBusinessConfig();
@@ -459,6 +519,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initIcons();
   initWhatsAppLinks();
   Favorites.load();
+  renderFavoritesBadge();
+  document.addEventListener('favorites:change', renderFavoritesBadge);
+  document.addEventListener('catalog:rendered', initDestaquesCarousel, { once: true });
   Cart.load();
   Drawer.init();
   ProductModal.init();

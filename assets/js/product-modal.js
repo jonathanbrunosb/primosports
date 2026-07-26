@@ -186,7 +186,7 @@ const ProductModal = {
     priceNote.className = 'product-meta';
     priceNote.textContent = `${BUSINESS_CONFIG.priceNotice} Leve 2 por ${formatPrice(270)} ou 3 por ${formatPrice(380)}.`;
 
-    body.append(cat, title, meta, price, priceNote);
+    body.append(cat, title, meta, price, priceNote, this.buildTrustBadges());
 
     /* Tamanhos */
     const sizeTitle = document.createElement('h3');
@@ -366,6 +366,30 @@ const ProductModal = {
     /* Abas: descrição, detalhes, cuidados */
     body.appendChild(this.buildTabs(product));
     return body;
+  },
+
+  /**
+   * Selos de confiança. Propositalmente reescritos para dizer só o que já é
+   * verdade hoje — nada de "satisfação garantida" ou "primeira troca grátis"
+   * sem essas políticas estarem formalmente definidas.
+   */
+  buildTrustBadges() {
+    const wrap = document.createElement('div');
+    wrap.className = 'trust-badges';
+    const items = [
+      { icon: 'chat', text: 'Atendimento direto pelo WhatsApp' },
+      { icon: 'card', text: 'Pagamento combinado com você' },
+      { icon: 'exchange', text: 'Consulte nossa política de troca', href: 'trocas-e-devolucoes.html' }
+    ];
+    items.forEach((item) => {
+      const el = document.createElement(item.href ? 'a' : 'div');
+      el.className = 'trust-badge';
+      if (item.href) el.href = item.href;
+      el.append(icon(item.icon), document.createElement('span'));
+      el.querySelector('span').textContent = item.text;
+      wrap.appendChild(el);
+    });
+    return wrap;
   },
 
   buildTabs(product) {

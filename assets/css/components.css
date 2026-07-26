@@ -39,6 +39,65 @@
   gap: var(--gap);
 }
 
+/* Carrossel de destaques (home): rolagem horizontal com snap, setas e dots */
+.carousel-actions { display: flex; align-items: center; gap: 0.6rem; }
+.carousel-arrow {
+  width: 44px; height: 44px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  color: var(--white);
+  flex-shrink: 0;
+  transition: border-color var(--transition), color var(--transition), opacity var(--transition);
+}
+.carousel-arrow::before {
+  content: '';
+  width: 9px; height: 9px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+}
+#destaquesPrev::before { transform: rotate(135deg); margin-left: 3px; }
+#destaquesNext::before { transform: rotate(-45deg); margin-right: 2px; }
+.carousel-arrow:hover { border-color: var(--neon); color: var(--neon); }
+.carousel-arrow:disabled { opacity: 0.35; cursor: not-allowed; }
+.carousel-arrow:disabled:hover { border-color: var(--border-strong); color: var(--white); }
+
+.carousel-viewport { overflow: hidden; }
+.carousel-grid {
+  display: flex;
+  gap: var(--gap);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding-bottom: 0.5rem;
+  scrollbar-width: none;
+}
+.carousel-grid::-webkit-scrollbar { display: none; }
+.carousel-grid .product-card,
+.carousel-grid .skeleton-card {
+  flex: 0 0 clamp(210px, 46vw, 270px);
+  scroll-snap-align: start;
+}
+@media (min-width: 860px) {
+  .carousel-grid .product-card,
+  .carousel-grid .skeleton-card { flex-basis: clamp(240px, 23vw, 280px); }
+}
+
+.carousel-dots { display: none; justify-content: center; gap: 0.4rem; margin-top: 0.85rem; }
+.carousel-dots button {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--border-strong);
+  transition: background var(--transition), transform var(--transition);
+}
+.carousel-dots button[aria-current='true'] { background: var(--neon); transform: scale(1.25); }
+
+@media (max-width: 720px) {
+  .carousel-actions .btn { display: none; }
+  .carousel-dots { display: flex; }
+}
+
 .product-card {
   display: flex;
   flex-direction: column;
@@ -423,6 +482,29 @@ textarea.input { min-height: 90px; resize: vertical; }
 .perso-fields { display: grid; grid-template-columns: 2fr 1fr; gap: 0.6rem; margin-top: 0.75rem; }
 
 .share-row { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+.trust-badges {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin: 0.25rem 0 0.5rem;
+}
+.trust-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  text-align: center;
+  padding: 0.75rem 0.4rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+  line-height: 1.25;
+}
+a.trust-badge:hover { border-color: var(--neon); color: var(--neon); }
+.trust-badge svg { width: 20px; height: 20px; color: var(--neon); }
 
 .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 0.75rem; padding: 0 1.5rem 1.5rem; }
 .related-card { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: var(--surface); text-align: left; }

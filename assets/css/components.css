@@ -572,7 +572,9 @@ a.trust-badge:hover { border-color: var(--neon); color: var(--neon); }
 .whatsapp-float {
   position: fixed;
   right: 1rem;
-  bottom: 1rem;
+  /* Respeita a safe area do iPhone (barra de gestos) para não ficar meio
+     escondido nem sobrepor outros controles do sistema. */
+  bottom: calc(1rem + env(safe-area-inset-bottom));
   width: 56px; height: 56px;
   border-radius: 50%;
   background: #25d366;

@@ -248,6 +248,25 @@ Nomes em minúsculas, sem acentos e com hífen — ajuda no Google Imagens.
 > Use apenas fotos suas ou com autorização de uso. Não copie imagens de sites de clubes,
 > marcas esportivas ou concorrentes.
 
+### Imagens do hero (primeira dobra da home)
+
+As três camisas e o fundo de estádio do hero em `index.html` também são placeholders locais,
+em `assets/images/hero/`:
+
+| Arquivo | Uso | Peso |
+|---|---|---|
+| `camisa-flamengo-hero.webp` | camisa principal, em primeiro plano | 36 KB |
+| `camisa-real-madrid-hero.webp` | camisa de apoio, ao fundo | 38 KB |
+| `camisa-barcelona-hero.webp` | camisa de apoio, mais ao fundo | 62 KB |
+| `hero-stadium-background.webp` | fundo do hero (estádio/luz) | 6,5 KB |
+| `hero-smoke-green.webp` | névoa verde sobre o fundo | 54 KB |
+
+Todos dentro da meta de performance do projeto (fundo < 250 KB, camisa principal < 180 KB,
+camisas de apoio < 120 KB, névoa < 80 KB). Para substituir por fotos reais, mantenha os
+mesmos nomes de arquivo e proporção aproximada (camisas em pé, fundo transparente ou já
+recortado) — nenhum HTML ou CSS precisa mudar. Atualize também o `alt` de cada `<img>` em
+`index.html` para descrever a foto real.
+
 ---
 
 ## Como alterar o estoque por tamanho

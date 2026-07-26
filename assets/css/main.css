@@ -171,22 +171,53 @@ main { position: relative; z-index: 1; }
 /* ------------------------------------------------------------------ Hero */
 /* Ambiente de "estádio" só com CSS: feixes de luz + vinheta, sem depender
    de foto de terceiros. */
+/* ===================================================================== */
+/* Hero — três camisas em composição (Flamengo em destaque, Real Madrid   */
+/* e Barcelona de apoio), atmosfera de estádio ao fundo.                  */
+/* ===================================================================== */
 .hero {
   position: relative;
-  padding: clamp(2.5rem, 6vw, 4.5rem) 0;
   overflow: hidden;
-  background:
-    radial-gradient(ellipse 60% 45% at 82% 8%, rgba(118, 255, 3, 0.16) 0%, transparent 65%),
-    repeating-conic-gradient(from 200deg at 78% 0%, rgba(255, 255, 255, 0.05) 0deg 2deg, transparent 2deg 14deg),
-    radial-gradient(ellipse 90% 60% at 50% 100%, rgba(0, 0, 0, 0.55) 0%, transparent 70%);
+  min-height: 620px;
 }
-.hero-grid {
-  position: relative;
+
+.hero-bg,
+.hero-smoke {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+.hero-smoke {
   z-index: 1;
+  opacity: 0.55;
+  mix-blend-mode: screen;
+  object-position: right center;
+}
+/* Overlays por cima da foto de fundo: legibilidade do texto à esquerda,
+   vinheta inferior e luz verde concentrada atrás dos produtos. */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.95) 0%, rgba(0,0,0,.78) 42%, rgba(0,0,0,.28) 100%),
+    linear-gradient(180deg, rgba(0,0,0,.05) 0%, rgba(0,0,0,.75) 100%),
+    radial-gradient(ellipse 55% 60% at 78% 55%, rgba(118,255,3,.20) 0%, transparent 70%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: clamp(1.5rem, 4vw, 3rem);
+  grid-template-columns: 42% 58%;
   align-items: center;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  padding-block: clamp(2.5rem, 6vw, 4.5rem);
+  min-height: 560px;
 }
 
 .eyebrow {
@@ -201,7 +232,7 @@ main { position: relative; z-index: 1; }
 
 .hero h1 {
   font-family: var(--font-display);
-  font-size: clamp(2.75rem, 8vw, 5rem);
+  font-size: clamp(3rem, 12vw, 5rem);
   line-height: 0.95;
   letter-spacing: 0.02em;
   margin-bottom: 1rem;
@@ -209,138 +240,67 @@ main { position: relative; z-index: 1; }
 .hero h1 span { color: var(--neon); display: block; }
 .hero p { color: var(--text-muted); max-width: 46ch; margin-bottom: 1.75rem; }
 
-.hero-cta { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 2rem; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 0.75rem; }
 
-/* Faixa de confiança do hero: informação essencial de compra na 1ª dobra */
-.hero-trust {
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  gap: 0.6rem 1.5rem;
-}
-.hero-trust li {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: var(--fs-xs);
-  font-weight: 600;
-  color: var(--text-muted);
-}
-.hero-trust svg { width: 16px; height: 16px; color: var(--neon); flex-shrink: 0; }
-@media (max-width: 480px) {
-  .hero-trust { grid-template-columns: 1fr; }
-}
-
-/* Camisa em CSS — sem imagem externa, sem custo de rede */
-.hero-visual {
+/* Composição das três camisas */
+.hero-products {
   position: relative;
   display: grid;
   place-items: center;
-  min-height: 380px;
+  min-height: 340px;
 }
-.glow-ring {
+.hero-product {
   position: absolute;
-  width: min(340px, 80%);
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 68%);
+  filter: drop-shadow(0 22px 34px rgba(0, 0, 0, 0.55));
 }
-.hero-shirt {
-  position: relative;
-  width: min(280px, 74%);
-  aspect-ratio: 3 / 3.6;
-  filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.6));
+.hero-product-main {
+  width: min(340px, 62%);
+  z-index: 3;
 }
-.shirt-body {
-  position: absolute;
-  inset: 12% 14% 0;
-  background: linear-gradient(160deg, #202020 0%, #0c0c0c 100%);
-  border: 1px solid var(--border-strong);
-  border-radius: 12px 12px 18px 18px;
-  display: grid;
-  place-items: center;
-  gap: 0.25rem;
-  align-content: center;
-}
-.shirt-sleeve {
-  position: absolute;
-  top: 12%;
-  width: 20%;
-  height: 34%;
-  background: linear-gradient(160deg, #1b1b1b, #0a0a0a);
-  border: 1px solid var(--border-strong);
-}
-.shirt-sleeve.left { left: 0; border-radius: 14px 0 0 20px; transform: skewY(12deg); }
-.shirt-sleeve.right { right: 0; border-radius: 0 14px 20px 0; transform: skewY(-12deg); }
-.shirt-neck {
-  position: absolute;
-  top: 8%; left: 50%;
-  transform: translateX(-50%);
-  width: 30%; height: 12%;
-  background: var(--neon);
-  border-radius: 0 0 999px 999px;
+.hero-product-back {
   z-index: 2;
+  opacity: 0.82;
+  filter: drop-shadow(0 16px 24px rgba(0, 0, 0, 0.5)) brightness(0.82);
 }
-.shirt-badge {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  color: #05210a;
-  background: var(--neon);
-  width: 34px; height: 34px;
-  display: grid; place-items: center;
-  border-radius: 8px;
+.hero-product-a {
+  width: min(250px, 46%);
+  transform: translate(38%, -12%);
+  z-index: 1;
 }
-.shirt-number {
-  font-family: var(--font-display);
-  font-size: clamp(3.5rem, 12vw, 5.5rem);
-  line-height: 1;
-  color: var(--neon);
-}
-.shirt-name {
-  font-family: var(--font-display);
-  letter-spacing: 0.18em;
-  color: var(--gray-light);
-  font-size: 0.95rem;
+.hero-product-b {
+  width: min(230px, 42%);
+  transform: translate(58%, 6%);
+  opacity: 0.68;
+  z-index: 0;
 }
 
-.floating-card {
-  position: absolute;
-  background: rgba(17, 17, 17, 0.94);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 0.75rem 0.9rem;
-  display: grid;
-  gap: 0.1rem;
-  box-shadow: var(--shadow);
-  max-width: 200px;
+/* --------------------------------------------------------- Benefícios */
+.hero-benefits {
+  position: relative;
+  z-index: 3;
+  background: rgba(5, 5, 5, 0.75);
+  border-top: 1px solid var(--border);
 }
-.floating-card b { font-size: var(--fs-sm); }
-.floating-card small { font-size: var(--fs-xs); color: var(--text-dim); }
-.floating-card > span:first-child { color: var(--neon); font-weight: 800; }
-.card-a { top: 6%; right: -4px; }
-.card-b { bottom: 6%; left: -4px; }
-
-/* -------------------------------------------------------------- Benefícios */
-.benefits { padding: 1.5rem 0 2.5rem; }
-/* 6 benefícios: 3 colunas fecham duas linhas cheias, sem item órfão. */
-.benefits-grid {
+.hero-benefits-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.75rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  padding-block: 1rem;
 }
-@media (max-width: 900px) { .benefits-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 480px) { .benefits-grid { grid-template-columns: 1fr; } }
-.benefit {
+.hero-benefit {
   display: flex;
-  gap: 0.75rem;
-  align-items: flex-start;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1rem;
+  flex-direction: column;
+  gap: 0.15rem;
+  align-items: center;
+  text-align: center;
+  padding: 0.4rem 1rem;
+  border-left: 1px solid var(--border);
+  font-size: var(--fs-sm);
 }
-.benefit svg { width: 26px; height: 26px; color: var(--neon); flex-shrink: 0; }
-.benefit b { display: block; font-size: var(--fs-sm); }
-.benefit small { color: var(--text-dim); font-size: var(--fs-xs); }
+.hero-benefit:first-child { border-left: 0; }
+.hero-benefit svg { width: 22px; height: 22px; color: var(--neon); margin-bottom: 0.3rem; }
+.hero-benefit b { font-size: var(--fs-sm); }
+.hero-benefit small { color: var(--text-dim); font-size: var(--fs-xs); }
 
 /* ----------------------------------------------------------------- Seções */
 .section { padding: clamp(2.5rem, 6vw, 4rem) 0; }

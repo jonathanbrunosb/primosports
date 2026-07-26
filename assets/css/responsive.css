@@ -13,28 +13,76 @@
 }
 
 @media (max-width: 980px) {
-  .hero-grid { grid-template-columns: 1fr; }
-  .hero-visual { order: -1; min-height: 300px; }
-  .floating-card { display: none; }
+  /* Mobile: composição das camisas aparece antes do texto (mais impacto,
+     sem exigir rolagem para ver o produto), CTAs com largura total e
+     respeito à safe area do iPhone. */
+  .hero { min-height: 0; }
+  .hero-content {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    padding-block: 1rem 1.25rem;
+  }
+  .hero-products { order: -1; min-height: 240px; margin-bottom: 0.25rem; }
+  .hero-product-main { width: min(320px, 58%); }
+  .hero-copy p { margin-bottom: 1.1rem; }
+  .hero-cta {
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-bottom: 0;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .hero-cta .btn { width: 100%; min-height: 52px; }
+  .hero-benefits-grid { padding-block: 0.6rem; }
+  .hero-benefit { padding-block: 0.5rem; }
   .story-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: repeat(2, 1fr); }
   .modal-grid { grid-template-columns: 1fr; }
 }
 
+@media (max-width: 720px) {
+  .hero-benefits-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero-benefit { border-left: 0 !important; border-top: 1px solid var(--border); padding-block: 0.5rem; }
+  .hero-benefit:nth-child(1),
+  .hero-benefit:nth-child(2) { border-top: 0; }
+  .hero-benefit:nth-child(even) { border-left: 1px solid var(--border) !important; }
+
+  .section-heading.split { align-items: flex-start; }
+  .product-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+  .product-actions .row { grid-template-columns: 1fr; }
+  .perso-fields { grid-template-columns: 1fr; }
+  .related-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
+}
+
 @media (max-width: 860px) {
+  .nav-wrap { gap: 0.6rem; }
+
   .menu-toggle {
     display: grid;
     place-items: center;
     width: 44px; height: 44px;
+    flex-shrink: 0; /* nunca deixar o flexbox espremer o botão até sumir */
     border-radius: 50%;
     border: 1px solid var(--border);
     color: var(--white);
-    order: -1;
+    order: 5; /* sempre o último círculo do cabeçalho, à direita */
   }
   .menu-toggle svg { width: 22px; height: 22px; }
 
-  .brand { margin-inline: auto; }
-  .nav-actions { margin-left: 0; }
+  .brand { margin-inline: 0; margin-right: auto; min-width: 0; flex-shrink: 1; }
+  .brand span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .nav-actions { margin-left: 0; flex-shrink: 0; }
+  .brand span { font-size: 1rem; }
+  .brand img { width: 34px; height: 34px; }
+
+  /* O WhatsApp já tem o botão flutuante fixo na tela; repeti-lo aqui como
+     círculo no cabeçalho deixava um ícone "vazio" quando o script não o
+     preenchia (bug corrigido) — no mobile ele só cria ruído e duplica a
+     mesma ação, então some daqui e permanece só o flutuante. */
+  .nav-actions > .whatsapp-link.icon-btn { display: none; }
 
   .main-nav {
     position: fixed;
@@ -60,14 +108,6 @@
   }
 }
 
-@media (max-width: 720px) {
-  .section-heading.split { align-items: flex-start; }
-  .product-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
-  .product-actions .row { grid-template-columns: 1fr; }
-  .perso-fields { grid-template-columns: 1fr; }
-  .hero-stats { gap: 1.25rem; }
-  .related-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
-}
 
 @media (max-width: 560px) {
   .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
@@ -75,7 +115,6 @@
   .modal-dialog { max-height: 96dvh; border-radius: var(--radius); }
   .modal-grid { padding: 1.1rem; gap: 1rem; }
   .related-grid { padding: 0 1.1rem 1.1rem; }
-  .hero-cta .btn { width: 100%; }
   .whatsapp-float { width: 52px; height: 52px; }
 }
 
@@ -89,15 +128,14 @@
 @media (max-width: 380px) {
   .container { padding-inline: 1rem; }
   .product-grid { grid-template-columns: 1fr; }
-  .brand span { font-size: 1rem; }
-  .brand img { width: 34px; height: 34px; }
-  .hero-stats { gap: 1rem; }
+  .hero-products { min-height: 260px; }
+  .hero-product-main { width: min(280px, 60%); }
 }
 
 /* Paisagem em telas baixas: evita drawer/modal cortados */
 @media (max-height: 480px) and (orientation: landscape) {
-  .hero { padding-block: 1.5rem; }
-  .hero-visual { min-height: 220px; }
+  .hero-content { padding-block: 1rem; }
+  .hero-products { min-height: 200px; }
   .modal-dialog { max-height: 98dvh; }
 }
 

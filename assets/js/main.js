@@ -13,7 +13,7 @@ const ICON_PATHS = {
   shield: 'M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Z',
   card: 'M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v2H2V6Zm0 4h20v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-8Zm3 5h6v2H5v-2Z',
   truck: 'M3 5h11v9H3V5Zm12 3h3.5L21 11v3h-6V8ZM6.5 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm11 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z',
-  clock: 'M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm1 5h-2v6l5 3 1-1.7-4-2.3V7Z',
+  clock: 'M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Z',
   box: 'M12 2 3 6.5v11L12 22l9-4.5v-11L12 2Zm0 2.2 6.4 3.2L12 10.6 5.6 7.4 12 4.2Z',
   chat: 'M4 3h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H8l-4 4V5a2 2 0 0 1 2-2Z',
   exchange: 'M7 3 3 7l4 4V8h9V6H7V3Zm10 6-4 4v3H4v2h9v3l4-4-4-4Z',
@@ -30,6 +30,18 @@ function icon(name) {
   const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
   path.setAttribute('d', ICON_PATHS[name] || ICON_PATHS.shield);
   svg.appendChild(path);
+  // O relógio precisa dos ponteiros em traço vazado — como path única com o
+  // mesmo fill, os ponteiros ficavam "colados" ao círculo e somem.
+  if (name === 'clock') {
+    const hands = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    hands.setAttribute('d', 'M12 6.5v6l4 2.2');
+    hands.setAttribute('fill', 'none');
+    hands.setAttribute('stroke', 'var(--bg, #050505)');
+    hands.setAttribute('stroke-width', '1.8');
+    hands.setAttribute('stroke-linecap', 'round');
+    hands.setAttribute('stroke-linejoin', 'round');
+    svg.appendChild(hands);
+  }
   return svg;
 }
 
@@ -492,7 +504,12 @@ function initWhatsAppLinks() {
     btn.addEventListener('click', () => openWhatsApp(buildPackageMessage(btn.dataset.package || '')));
   });
 
-  document.querySelectorAll('.whatsapp-float').forEach((el) => el.appendChild(icon('whatsapp')));
+  // .whatsapp-float (botão flutuante) e o ícone do cabeçalho (.icon-btn.whatsapp-link)
+  // usam o mesmo ícone; antes só o flutuante recebia, deixando o círculo do
+  // cabeçalho vazio.
+  document.querySelectorAll('.whatsapp-float, .icon-btn.whatsapp-link').forEach((el) => {
+    if (!el.querySelector('svg')) el.appendChild(icon('whatsapp'));
+  });
 }
 
 /** Ícones dos blocos de benefício, declarados via data-icon. */

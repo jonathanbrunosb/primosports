@@ -30,6 +30,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
 
+  <!-- Só a imagem principal do hero recebe preload (a camisa em destaque);
+       fundo e camisas de apoio carregam eager/async normalmente. -->
+  <link rel="preload" as="image" href="assets/images/hero/camisa-flamengo-hero.webp" fetchpriority="high" />
+
   <link rel="stylesheet" href="assets/css/variables.css" />
   <link rel="stylesheet" href="assets/css/reset.css" />
   <link rel="stylesheet" href="assets/css/main.css" />
@@ -113,7 +117,24 @@
   <main id="conteudo">
     <!-- ------------------------------------------------------------- Hero -->
     <section class="hero">
-      <div class="container hero-grid">
+      <img
+        class="hero-bg"
+        src="assets/images/hero/hero-stadium-background.webp"
+        alt=""
+        width="1920" height="1080"
+        fetchpriority="high"
+        decoding="async"
+      />
+      <img
+        class="hero-smoke"
+        src="assets/images/hero/hero-smoke-green.webp"
+        alt=""
+        width="800" height="450"
+        loading="eager"
+        decoding="async"
+        aria-hidden="true"
+      />
+      <div class="container hero-content">
         <div class="hero-copy reveal">
           <span class="eyebrow">Camisas que contam histórias</span>
           <h1>Vista sua <span>paixão.</span></h1>
@@ -122,41 +143,44 @@
             <a class="btn btn-primary" href="catalogo.html">Ver coleção</a>
             <a class="btn btn-wa whatsapp-link" href="#" data-message="Quero comprar uma camisa.">Comprar pelo WhatsApp</a>
           </div>
-          <ul class="hero-trust">
-            <li data-icon="truck">Frete grátis na RMR e RM de Maceió</li>
-            <li data-icon="bolt">Pix, crédito ou débito</li>
-            <li data-icon="box">Pronta entrega ou encomenda</li>
-            <li data-icon="clock">Atendimento de domingo a domingo</li>
-          </ul>
         </div>
 
-        <div class="hero-visual reveal" aria-hidden="true">
-          <div class="glow-ring"></div>
-          <div class="hero-shirt">
-            <div class="shirt-sleeve left"></div>
-            <div class="shirt-sleeve right"></div>
-            <div class="shirt-neck"></div>
-            <div class="shirt-body">
-              <div class="shirt-badge">PS</div>
-              <span class="shirt-number">10</span>
-              <span class="shirt-name">PRIMO'S</span>
-            </div>
-          </div>
-          <div class="floating-card card-a"><span>★</span><b>Lançamentos</b><small>Temporadas 2025/2026 e 2026</small></div>
-          <div class="floating-card card-b"><span>✓</span><b>Atendimento rápido</b><small>Consulta pelo WhatsApp</small></div>
+        <div class="hero-products reveal">
+          <img
+            class="hero-product hero-product-back hero-product-b"
+            src="assets/images/hero/camisa-barcelona-hero.webp"
+            alt="Camisa azul e grená de clube europeu em destaque"
+            width="1200" height="1480"
+            loading="eager"
+            decoding="async"
+          />
+          <img
+            class="hero-product hero-product-back hero-product-a"
+            src="assets/images/hero/camisa-real-madrid-hero.webp"
+            alt="Camisa branca de clube europeu em destaque"
+            width="1200" height="1480"
+            loading="eager"
+            decoding="async"
+          />
+          <img
+            class="hero-product hero-product-main"
+            src="assets/images/hero/camisa-flamengo-hero.webp"
+            alt="Camisa rubro-negra em destaque na coleção Primo's Sports"
+            width="1200" height="1480"
+            fetchpriority="high"
+            decoding="async"
+          />
         </div>
       </div>
-    </section>
 
-    <!-- -------------------------------------------------------- Benefícios -->
-    <section class="benefits" aria-label="Benefícios da marca">
-      <div class="container benefits-grid">
-        <div class="benefit" data-icon="shield"><div><b>Qualidade selecionada</b><small>Modelos escolhidos um a um</small></div></div>
-        <div class="benefit" data-icon="card"><div><b>Pix, crédito ou débito</b><small>Pagamento combinado no atendimento</small></div></div>
-        <div class="benefit" data-icon="truck"><div><b>Frete grátis em RMR e RM Maceió</b><small>Outras cidades: consulte</small></div></div>
-        <div class="benefit" data-icon="clock"><div><b>Domingo a domingo</b><small>Atendimento todos os dias</small></div></div>
-        <div class="benefit" data-icon="box"><div><b>Pronta entrega ou encomenda</b><small>Prazo médio de 5 a 10 dias</small></div></div>
-        <div class="benefit" data-icon="chat"><div><b>Suporte pelo WhatsApp</b><small>Tire dúvidas antes de fechar</small></div></div>
+      <!-- --------------------------------------------------- Benefícios -->
+      <div class="hero-benefits">
+        <div class="container hero-benefits-grid">
+          <div class="hero-benefit" data-icon="truck"><b>Frete grátis</b><small>RMR Recife e RMR Maceió</small></div>
+          <div class="hero-benefit" data-icon="bolt"><b>Pagamento</b><small>Pix, crédito ou débito</small></div>
+          <div class="hero-benefit" data-icon="box"><b>Pronta entrega</b><small>Ou encomenda de 5 a 10 dias</small></div>
+          <div class="hero-benefit" data-icon="clock"><b>Atendimento</b><small>Domingo a domingo</small></div>
+        </div>
       </div>
     </section>
 

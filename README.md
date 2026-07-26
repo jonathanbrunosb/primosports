@@ -17,6 +17,7 @@ compatível com GitHub Pages, inclusive quando publicado em subdiretório.
 - [Como trocar o número do WhatsApp](#como-trocar-o-número-do-whatsapp)
 - [Como alterar os preços](#como-alterar-os-preços)
 - [Como cadastrar produtos](#como-cadastrar-produtos)
+- [Como gerar as páginas de produto (SEO)](#como-gerar-as-páginas-de-produto-seo)
 - [Como incluir as imagens](#como-incluir-as-imagens)
 - [Como alterar o estoque por tamanho](#como-alterar-o-estoque-por-tamanho)
 - [Como publicar no GitHub Pages](#como-publicar-no-github-pages)
@@ -24,6 +25,8 @@ compatível com GitHub Pages, inclusive quando publicado em subdiretório.
 - [Google Search Console e Analytics](#google-search-console-e-analytics)
 - [Favicon e imagem de compartilhamento](#favicon-e-imagem-de-compartilhamento)
 - [Monitoramento de disponibilidade](#monitoramento-de-disponibilidade)
+- [Como testar](#como-testar)
+- [Como executar o Lighthouse](#como-executar-o-lighthouse)
 - [Dados fictícios a substituir](#dados-fictícios-a-substituir)
 - [Checklist de lançamento](#checklist-de-lançamento)
 
@@ -60,6 +63,9 @@ Alternativas: extensão **Live Server** no VS Code, ou `npx serve .`.
 ├── sitemap.xml
 ├── .nojekyll                     Impede o Jekyll de processar o site no GitHub Pages
 ├── .github/workflows/uptime.yml  Verificação básica de disponibilidade
+├── produtos/                     ⭐ Uma página estática por produto (gerada, ver abaixo)
+├── scripts/
+│   └── generate-product-pages.mjs  Gera produtos/*.html e atualiza o sitemap
 └── assets/
     ├── css/
     │   ├── variables.css         Cores, fontes, espaçamentos (comece por aqui)
@@ -179,6 +185,40 @@ Em `assets/js/products.js`, copie um bloco existente e ajuste:
 Os filtros do catálogo (categorias, times, temporadas, versões) são gerados **a partir dos
 próprios produtos**, então não há lista para atualizar em paralelo: cadastrou o produto, o
 filtro aparece.
+
+Depois de cadastrar, alterar preço, estoque ou qualquer outro dado de produto, rode o gerador
+de páginas (próxima seção) para que a versão estática fique atualizada antes do deploy.
+
+---
+
+## Como gerar as páginas de produto (SEO)
+
+O catálogo (`catalogo.html`) monta os cards via JavaScript — ótimo para busca e filtro em
+tempo real, mas invisível para quem (ou o que) não executa JavaScript. Por isso cada produto
+também tem uma página estática própria em `produtos/<id>.html`, com nome, preço, tamanhos e
+descrição já escritos no HTML, além de dados estruturados (`JSON-LD Product`) para SEO.
+
+Sempre que alterar `assets/js/products.js` (produto novo, preço, estoque, descrição...), rode:
+
+```bash
+node scripts/generate-product-pages.mjs
+```
+
+O script:
+
+- Lê os produtos diretamente de `products.js` (mesma fonte de dados do site, sem duplicar
+  informação);
+- Gera/atualiza um `.html` por produto em `produtos/`;
+- Remove páginas de produtos que não existem mais no catálogo;
+- Atualiza `sitemap.xml` com a URL de cada produto.
+
+Não precisa de Node em produção — o resultado é HTML estático puro, publicado como qualquer
+outro arquivo do repositório. Rode o script localmente, confira o resultado, e comite os
+arquivos gerados junto com a mudança em `products.js`.
+
+Os cards do catálogo linkam para essas páginas (`<a href="produtos/...">`) com um
+`preventDefault` que abre o modal para quem tem JavaScript — a página estática funciona tanto
+como destino real do link quanto como reforço de SEO.
 
 ---
 
@@ -349,6 +389,31 @@ Para receber alerta no celular quando o site cair, use um serviço externo gratu
 
 ---
 
+## Como testar
+
+Não há suíte automatizada publicada no repositório, mas o roteiro usado a cada mudança é:
+
+1. Sirva o site localmente (`python3 -m http.server 8000`);
+2. Catálogo: busque um time, aplique e limpe filtros, confira o contador de resultados;
+3. Produto: abra o modal, tente adicionar sem tamanho (deve bloquear), selecione um tamanho
+   e adicione — confira o toast e o carrinho;
+4. Carrinho: mude quantidade e tamanho, confira o cálculo do pacote (1/2/3/4+) e a mensagem
+   de incentivo, esvazie o carrinho;
+5. Envie a consulta e confira o texto final da mensagem do WhatsApp antes de realmente enviar;
+6. Recarregue a página e confirme que o carrinho e os favoritos persistiram;
+7. Repita em 320px, 768px e 1366px, e no mobile real quando possível;
+8. Abra o DevTools → Console e confira que não há nenhum erro em nenhuma página.
+
+## Como executar o Lighthouse
+
+1. Sirva o site localmente ou use a URL já publicada;
+2. No Chrome, abra o DevTools → aba **Lighthouse**;
+3. Marque **Performance**, **Accessibility**, **Best practices** e **SEO**, modo **Mobile**;
+4. Rode e confira as quatro notas — a meta do projeto é Performance > 85 e as demais > 90;
+5. Priorize corrigir o que o próprio relatório listar como maior impacto antes de repetir.
+
+---
+
 ## Dados fictícios a substituir
 
 Tudo que ainda é provisório está marcado no código com o comentário `PENDENTE:`.
@@ -402,6 +467,7 @@ condição comercial não informada.
 [ ] Testar carrinho
 [ ] Testar filtros
 [ ] Testar formulário
+[ ] Rodar scripts/generate-product-pages.mjs após qualquer mudança em products.js
 [ ] Executar Lighthouse
 [ ] Validar acessibilidade
 [ ] Revisar ortografia

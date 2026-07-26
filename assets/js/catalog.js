@@ -142,6 +142,17 @@ const Catalog = {
         toggle.setAttribute('aria-expanded', String(open));
       });
     }
+
+    // Filtro já é aplicado ao vivo; o botão só fecha o painel no mobile,
+    // devolvendo o foco para quem abriu.
+    const apply = document.getElementById('applyFilters');
+    if (apply && panel && toggle) {
+      apply.addEventListener('click', () => {
+        panel.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.focus();
+      });
+    }
   },
 
   /** Lê ?categoria= / ?busca= da URL para links vindos da home. */
@@ -406,12 +417,7 @@ const Catalog = {
 
     const tags = document.createElement('div');
     tags.className = 'product-tags';
-    if (product.bestSeller) tags.appendChild(makeTag('Mais vendida', 'tag-best'));
-    if (product.newArrival) tags.appendChild(makeTag('Lançamento', 'tag-new'));
-    if (availability === 'available') tags.appendChild(makeTag('Pronta entrega', 'tag-ready'));
-    if (availability === 'low_stock') tags.appendChild(makeTag('Últimas unidades', 'tag-low'));
-    if (availability === 'pre_order') tags.appendChild(makeTag('Sob encomenda', 'tag-order'));
-    if (availability === 'unavailable') tags.appendChild(makeTag('Indisponível', 'tag-off'));
+    tags.appendChild(makeTag(...priorityTag(product, availability)));
     visual.appendChild(tags);
 
     const fav = document.createElement('button');
@@ -438,7 +444,14 @@ const Catalog = {
 
     const name = document.createElement('h3');
     name.className = 'product-name';
-    name.textContent = `${product.team} ${product.season}`;
+    const nameLink = document.createElement('a');
+    nameLink.href = `produtos/${product.id}.html`;
+    nameLink.textContent = `${product.team} ${product.season}`;
+    nameLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      ProductModal.open(product.id);
+    });
+    name.appendChild(nameLink);
 
     const meta = document.createElement('p');
     meta.className = 'product-meta';
@@ -461,11 +474,17 @@ const Catalog = {
     const actions = document.createElement('div');
     actions.className = 'product-actions';
 
-    const details = document.createElement('button');
-    details.type = 'button';
+    // Link real para a página estática do produto (SEO e navegação sem JS).
+    // Com JS, a navegação é interceptada para abrir o modal — mais rápido
+    // e sem perder o estado de filtros do catálogo.
+    const details = document.createElement('a');
+    details.href = `produtos/${product.id}.html`;
     details.className = 'btn btn-primary btn-sm btn-block';
     details.textContent = 'Ver detalhes';
-    details.addEventListener('click', () => ProductModal.open(product.id));
+    details.addEventListener('click', (e) => {
+      e.preventDefault();
+      ProductModal.open(product.id);
+    });
 
     const row = document.createElement('div');
     row.className = 'row';
@@ -506,4 +525,22 @@ function makeTag(text, className) {
   el.className = `tag ${className}`;
   el.textContent = text;
   return el;
+}
+
+/**
+ * Um único selo por card. Prioridade: 1) indisponível, 2) últimas unidades,
+ * 3) mais vendida/lançamento, 4) pronta entrega ou sob encomenda como
+ * complemento quando não há nada mais relevante a destacar.
+ * Mostrar vários selos ao mesmo tempo polui o card; e como "pronta entrega"
+ * e "sob encomenda" já aparecem escritos no texto de status logo abaixo,
+ * o selo (mais visível) fica reservado para o que precisa de atenção —
+ * urgência de estoque primeiro, depois o destaque comercial.
+ */
+function priorityTag(product, availability) {
+  if (availability === 'unavailable') return ['Indisponível', 'tag-off'];
+  if (availability === 'low_stock') return ['Últimas unidades', 'tag-low'];
+  if (product.bestSeller) return ['Mais vendida', 'tag-best'];
+  if (product.newArrival) return ['Lançamento', 'tag-new'];
+  if (availability === 'available') return ['Pronta entrega', 'tag-ready'];
+  return ['Sob encomenda', 'tag-order'];
 }

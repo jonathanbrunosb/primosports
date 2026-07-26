@@ -69,6 +69,73 @@ main { position: relative; z-index: 1; }
 .main-nav a:hover { color: var(--neon); background: var(--accent-soft); }
 .main-nav a[aria-current='page'] { color: var(--neon); }
 
+/* Dropdown "Categorias" no menu principal */
+.nav-dropdown { position: relative; }
+.nav-dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.55rem 0.7rem;
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: color var(--transition), background var(--transition);
+}
+.nav-dropdown-toggle:hover,
+.nav-dropdown-toggle[aria-expanded='true'] { color: var(--neon); background: var(--accent-soft); }
+.nav-dropdown-toggle::after {
+  content: '';
+  width: 6px; height: 6px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  margin-top: -3px;
+  transition: transform var(--transition);
+}
+.nav-dropdown-toggle[aria-expanded='true']::after { transform: rotate(-135deg); margin-top: 3px; }
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  min-width: 190px;
+  background: var(--graphite-2);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  padding: 0.4rem;
+  box-shadow: var(--shadow);
+  display: none;
+  z-index: 5;
+}
+.nav-dropdown-menu.open { display: block; }
+.nav-dropdown-menu a {
+  display: block;
+  padding: 0.55rem 0.7rem;
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+.nav-dropdown-menu a:hover { color: var(--neon); background: var(--accent-soft); }
+
+@media (max-width: 860px) {
+  .nav-dropdown-menu {
+    position: static;
+    border: 0;
+    box-shadow: none;
+    background: transparent;
+    padding: 0 0 0 1rem;
+    display: none;
+  }
+  .nav-dropdown-menu.open { display: block; }
+  .nav-dropdown-toggle {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0.9rem 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+}
+
 .nav-actions { display: flex; align-items: center; gap: 0.5rem; flex-shrink: 0; }
 
 .icon-btn {
@@ -144,10 +211,24 @@ main { position: relative; z-index: 1; }
 
 .hero-cta { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 2rem; }
 
-.hero-stats { display: flex; gap: 2rem; flex-wrap: wrap; }
-.hero-stats div { display: flex; flex-direction: column; }
-.hero-stats strong { font-family: var(--font-display); font-size: 1.75rem; color: var(--neon); line-height: 1; }
-.hero-stats span { font-size: var(--fs-xs); color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.1em; }
+/* Faixa de confiança do hero: informação essencial de compra na 1ª dobra */
+.hero-trust {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 0.6rem 1.5rem;
+}
+.hero-trust li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--text-muted);
+}
+.hero-trust svg { width: 16px; height: 16px; color: var(--neon); flex-shrink: 0; }
+@media (max-width: 480px) {
+  .hero-trust { grid-template-columns: 1fr; }
+}
 
 /* Camisa em CSS — sem imagem externa, sem custo de rede */
 .hero-visual {
@@ -336,6 +417,8 @@ main { position: relative; z-index: 1; }
   gap: 0.5rem;
 }
 .price-card.featured { border-color: var(--neon); box-shadow: var(--shadow-glow); }
+.price-card.best-value { border-color: var(--gray-metal); }
+.badge-alt { background: var(--gray-light); color: #1a1a1a; }
 .price-card .badge {
   position: absolute;
   top: -12px; left: 50%;
@@ -497,6 +580,16 @@ footer {
   font-size: var(--fs-sm);
 }
 .notice strong { color: var(--white); }
+
+.updated-at {
+  display: inline-block;
+  font-size: var(--fs-xs);
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.3rem 0.75rem;
+  margin-bottom: 0.5rem;
+}
 
 /* --------------------------------------------------------------- Erro 404 */
 .error-page {

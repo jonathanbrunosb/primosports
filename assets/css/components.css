@@ -199,20 +199,42 @@
   overflow-y: auto;
 }
 .filters-panel h3 { font-family: var(--font-display); letter-spacing: 0.08em; font-size: 1.15rem; margin-bottom: 0.75rem; }
-.filter-group { border-top: 1px solid var(--border); padding: 0.9rem 0; }
+
+/* Grupos de filtro em accordion nativo (<details>/<summary>): sem JS extra,
+   navegável por teclado e compatível com leitor de tela. */
+.filter-group { border-top: 1px solid var(--border); padding: 0.65rem 0; }
 .filter-group:first-of-type { border-top: 0; padding-top: 0; }
-.filter-group > legend,
-.filter-group > h4 {
+.filter-group summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   font-size: var(--fs-xs);
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text-dim);
-  margin-bottom: 0.6rem;
-  padding: 0;
+  padding: 0.25rem 0;
 }
-.filter-group { border-width: 1px 0 0; }
-fieldset.filter-group { margin: 0; padding-inline: 0; }
+.filter-group summary::-webkit-details-marker { display: none; }
+.filter-group summary::after {
+  content: '';
+  width: 7px; height: 7px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform var(--transition);
+}
+.filter-group[open] summary::after { transform: rotate(-135deg); }
+.filter-group[open] summary { color: var(--white); margin-bottom: 0.5rem; }
+.filter-group summary:focus-visible { outline: 2px solid var(--neon); outline-offset: 2px; border-radius: 4px; }
+
+.filters-panel-actions { display: grid; gap: 0.5rem; margin-top: 0.5rem; }
+.filters-apply { display: none; }
+@media (max-width: 1100px) {
+  .filters-apply { display: inline-flex; }
+}
 
 .check {
   display: flex;
@@ -407,6 +429,17 @@ textarea.input { min-height: 90px; resize: vertical; }
 .summary .total { color: var(--white); font-weight: 800; font-size: 1.05rem; }
 .summary .total span:last-child { color: var(--neon); }
 .summary .save span:last-child { color: var(--neon); }
+
+.cart-incentive {
+  margin-top: 0.5rem;
+  padding: 0.6rem 0.75rem;
+  border: 1px dashed rgba(118, 255, 3, 0.4);
+  border-radius: var(--radius-sm);
+  background: var(--accent-soft);
+  color: var(--neon);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+}
 
 /* Modal de produto */
 .modal {

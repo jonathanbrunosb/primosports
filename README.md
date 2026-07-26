@@ -310,22 +310,23 @@ atendimento é por WhatsApp e não há loja física, cadastre como negócio de �
 
 ## Favicon e imagem de compartilhamento
 
-Os arquivos atuais em `assets/images/brand/` são **provisórios**, gerados em SVG a partir da
-identidade da marca. Substitua pelos definitivos mantendo os nomes:
+A logo oficial já está aplicada em `assets/images/brand/`, recortada a partir do arquivo
+`logo-primos-original.jpeg` (mantido no repositório como referência para gerar novos recortes).
 
-| Arquivo | Uso | Tamanho sugerido |
+| Arquivo | Uso | Tamanho |
 |---|---|---|
-| `favicon.svg` | ícone da aba | vetorial |
-| `primos-sports-shield.svg` | escudo, cabeçalho e rodapé | vetorial |
-| `primos-sports-logo-horizontal.svg` | logo horizontal | vetorial |
-| `social-share-primos-sports.svg` | link no WhatsApp/Instagram | 1200 × 630 |
+| `logo-primos-original.jpeg` | arquivo-fonte da logo, não usado diretamente no site | 1320 × 924 |
+| `primos-sports-shield.png` | escudo, cabeçalho e rodapé | 512 × 512 |
+| `primos-sports-logo.png` | logo completa (escudo + PRIMO'S SPORTS) | 900 × 900 |
+| `favicon-32x32.png` / `favicon-16x16.png` | ícone da aba | 32×32 / 16×16 |
+| `apple-touch-icon.png` | ícone ao salvar no iPhone | 180 × 180 |
+| `social-share-primos-sports.jpg` | pré-visualização de link no WhatsApp/Instagram | 1200 × 630 |
 
-Para máxima compatibilidade, acrescente também `favicon-16x16.png`, `favicon-32x32.png` e
-`apple-touch-icon.png` (180 × 180) e referencie-os no `<head>`. Prefira PNG ou JPG para a
-imagem de compartilhamento: alguns aplicativos não renderizam SVG na pré-visualização de link.
+Se receber uma versão em alta resolução com fundo transparente, é só substituir os arquivos
+acima mantendo os mesmos nomes e proporções — nenhum HTML precisa mudar.
 
-> Ao inserir a logo definitiva, use o arquivo com fundo transparente. Não recorte o fundo
-> branco "na mão" nem estique a imagem para caber.
+> Ao trocar a logo, use o arquivo com fundo transparente quando possível. Não recorte o fundo
+> "na mão" nem estique a imagem para caber.
 
 ---
 
@@ -351,7 +352,7 @@ Tudo que ainda é provisório está marcado no código com o comentário `PENDEN
 | Número do WhatsApp | `config.js` → `whatsappNumber` | **fictício** (`5581999999999`) |
 | Produtos e estoque | `products.js` | demonstrativos |
 | Fotos dos produtos | `assets/images/products/` | vazias, usando placeholder |
-| Logo, favicon, imagem social | `assets/images/brand/` | placeholders em SVG |
+| Logo, favicon, imagem social | `assets/images/brand/` | ✅ logo oficial aplicada |
 | Razão social, CNPJ, endereço | `config.js` → `legal` | vazios (não exibidos) |
 | Regra para 4+ camisas | `config.js` → `pricing` | não definida (vai para consulta) |
 | Valor da personalização | — | não definido (confirmado no atendimento) |

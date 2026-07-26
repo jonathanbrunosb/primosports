@@ -151,7 +151,7 @@ const PRODUCTS = [
     priceReference: 150, personalizationAvailable: true, deliveryType: 'Pronta entrega',
     featured: true, bestSeller: true, newArrival: true,
     description: 'Camisa titular do Real Madrid, versão torcedor, em tecido dry premium com escudo bordado e acabamento de alta qualidade.',
-    folder: 'real-madrid', slug: 'camisa-real-madrid-titular-2025-2026', imagesPending: true,
+    folder: 'real-madrid', slug: 'camisa-real-madrid-titular-2025-2026', imagesPending: false,
     sizes: sizes([A, 3], [A, 5], [L, 2], [E, 0], [X, 0])
   },
   {
@@ -169,7 +169,7 @@ const PRODUCTS = [
     priceReference: 150, personalizationAvailable: true, deliveryType: 'Pronta entrega',
     featured: true, bestSeller: true, newArrival: false,
     description: 'Camisa titular do Barcelona em versão torcedor, com tecido leve, escudo aplicado e acabamento premium.',
-    folder: 'barcelona', slug: 'camisa-barcelona-titular-2025-2026', imagesPending: true,
+    folder: 'barcelona', slug: 'camisa-barcelona-titular-2025-2026', imagesPending: false,
     sizes: sizes([A, 4], [A, 6], [A, 3], [L, 2], [E, 0])
   },
   {
@@ -214,7 +214,7 @@ const PRODUCTS = [
     priceReference: 150, personalizationAvailable: true, deliveryType: 'Pronta entrega',
     featured: true, bestSeller: false, newArrival: true,
     description: 'Camisa titular do Paris Saint-Germain, versão torcedor, com faixa central e acabamento premium.',
-    folder: 'psg', slug: 'camisa-psg-titular-2025-2026', imagesPending: true,
+    folder: 'psg', slug: 'camisa-psg-titular-2025-2026', imagesPending: false,
     sizes: sizes([A, 3], [A, 4], [A, 2], [L, 1], [X, 0])
   },
   {
@@ -223,7 +223,7 @@ const PRODUCTS = [
     priceReference: 150, personalizationAvailable: true, deliveryType: 'Sob encomenda',
     featured: false, bestSeller: false, newArrival: false,
     description: 'Camisa titular do Bayern de Munique em versão torcedor, com tecido dry e escudo aplicado.',
-    folder: 'bayern-munique', slug: 'camisa-bayern-munique-titular-2025-2026', imagesPending: true,
+    folder: 'bayern-munique', slug: 'camisa-bayern-munique-titular-2025-2026', imagesPending: false,
     sizes: sizes([E, 0], [A, 2], [E, 0], [E, 0], [X, 0])
   },
   {

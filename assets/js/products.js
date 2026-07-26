@@ -77,7 +77,7 @@ const PRODUCTS = [
     priceReference: 150, personalizationAvailable: true, deliveryType: 'Pronta entrega',
     featured: true, bestSeller: true, newArrival: false,
     description: 'Camisa titular do Flamengo em tecido leve e respirável, com escudo bordado e acabamento reforçado nas costuras.',
-    folder: 'flamengo', slug: 'camisa-flamengo-titular-2026', imagesPending: true,
+    folder: 'flamengo', slug: 'camisa-flamengo-titular-2026', imagesPending: false,
     sizes: sizes([A, 4], [A, 6], [L, 2], [E, 0], [X, 0])
   },
   {
@@ -142,6 +142,25 @@ const PRODUCTS = [
     description: 'Modelo retrô inspirado nos uniformes clássicos do Flamengo, com corte tradicional e gola em contraste.',
     folder: 'flamengo', slug: 'camisa-flamengo-retro-1981', imagesPending: true,
     sizes: sizes([E, 0], [E, 0], [L, 1], [E, 0], [X, 0])
+  },
+
+  {
+    id: 'santa-cruz-titular-2025-2026', sku: 'PS-SCR-H-2526', team: 'Santa Cruz', season: '2025/2026',
+    model: 'Titular', category: 'Brasileirão', subcategory: 'Brasil', version: 'Torcedor',
+    priceReference: 150, personalizationAvailable: true, deliveryType: 'Sob encomenda',
+    featured: false, bestSeller: false, newArrival: true,
+    description: 'Camisa titular do Santa Cruz em versão torcedor, com tecido leve e escudo aplicado.',
+    folder: 'santa-cruz', slug: 'camisa-santa-cruz-titular-2025-2026', imagesPending: false,
+    sizes: sizes([E, 0], [E, 0], [E, 0], [E, 0], [E, 0])
+  },
+  {
+    id: 'sport-recife-titular-2025-2026', sku: 'PS-SPT-H-2526', team: 'Sport Recife', season: '2025/2026',
+    model: 'Titular', category: 'Brasileirão', subcategory: 'Brasil', version: 'Torcedor',
+    priceReference: 150, personalizationAvailable: true, deliveryType: 'Sob encomenda',
+    featured: false, bestSeller: false, newArrival: true,
+    description: 'Camisa titular do Sport Recife em versão torcedor, com tecido leve e escudo aplicado.',
+    folder: 'sport-recife', slug: 'camisa-sport-recife-titular-2025-2026', imagesPending: false,
+    sizes: sizes([E, 0], [E, 0], [E, 0], [E, 0], [E, 0])
   },
 
   /* ----------------------------------------------------------------- Europa */

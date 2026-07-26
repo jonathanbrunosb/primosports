@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="Primo's Sports — camisas de times e seleções">
+  <defs><radialGradient id="g" cx="18%" cy="20%" r="80%">
+    <stop offset="0%" stop-color="#173a05"/><stop offset="100%" stop-color="#050505"/>
+  </radialGradient></defs>
+  <rect width="1200" height="630" fill="url(#g)"/>
+  <circle cx="180" cy="300" r="110" fill="#0b0b0b"/>
+  <path d="M180 210 L255 238 V305 Q255 362 180 396 Q105 362 105 305 V238 Z" fill="#8f98a3"/>
+  <path d="M180 226 L241 249 V305 Q241 352 180 380 Q119 352 119 305 V249 Z" fill="#1c2430"/>
+  <text x="163" y="322" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="72" font-weight="900" fill="#fff">P</text>
+  <text x="212" y="322" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="72" font-weight="900" fill="#76ff03">S</text>
+  <text x="330" y="270" font-family="Arial Black, Arial, sans-serif" font-size="72" font-weight="900" fill="#ffffff">PRIMO'S SPORTS</text>
+  <text x="332" y="332" font-family="Arial, sans-serif" font-size="34" fill="#76ff03">Vista sua paixão. Jogue com estilo.</text>
+  <text x="332" y="386" font-family="Arial, sans-serif" font-size="26" fill="#d7d7d7">Clubes do Brasil, Europa, seleções e retrôs</text>
+  <text x="332" y="426" font-family="Arial, sans-serif" font-size="26" fill="#a9a9a9">Pernambuco e Alagoas</text>
+</svg>

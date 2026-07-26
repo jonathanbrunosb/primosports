@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catálogo de camisas | Primo's Sports</title>
+  <meta name="description" content="Catálogo de camisas de clubes brasileiros, europeus, seleções e modelos retrô. Pesquise por time, temporada, tamanho e disponibilidade." />
+  <link rel="canonical" href="https://jonathanbrunosb.github.io/primosports/catalogo.html" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#050505" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="Primo's Sports" />
+  <meta property="og:title" content="Catálogo de camisas | Primo's Sports" />
+  <meta property="og:description" content="Camisas de clubes brasileiros, europeus, seleções e retrôs. Consulte tamanhos e disponibilidade." />
+  <meta property="og:url" content="https://jonathanbrunosb.github.io/primosports/catalogo.html" />
+  <meta property="og:image" content="https://jonathanbrunosb.github.io/primosports/assets/images/brand/social-share-primos-sports.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="assets/images/brand/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/images/brand/primos-sports-shield.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/variables.css" />
+  <link rel="stylesheet" href="assets/css/reset.css" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
+<body data-sync-url="true">
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mainNav"></button>
+      <a class="brand" href="index.html" aria-label="Primo's Sports — página inicial">
+        <img src="assets/images/brand/primos-sports-shield.svg" alt="" width="40" height="40" />
+        <span>PRIMO'S <b>SPORTS</b></span>
+      </a>
+      <nav class="main-nav" id="mainNav" aria-label="Menu principal">
+        <a href="index.html">Início</a>
+        <a href="catalogo.html" aria-current="page">Catálogo</a>
+        <a href="catalogo.html?categoria=Brasileir%C3%A3o">Brasileirão</a>
+        <a href="catalogo.html?categoria=Europa">Europa</a>
+        <a href="catalogo.html?categoria=Sele%C3%A7%C3%B5es">Seleções</a>
+        <a href="catalogo.html?categoria=Retr%C3%B4s">Retrôs</a>
+        <a href="index.html#precos">Preços</a>
+        <a href="entrega-e-pagamento.html">Entrega</a>
+        <a href="index.html#contato">Contato</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" id="searchBtn" type="button" aria-label="Pesquisar produtos"></button>
+        <button class="icon-btn" id="cartBtn" type="button" aria-label="Abrir orçamento" aria-controls="cartDrawer">
+          <span class="count-badge" id="cartCount" hidden>0</span>
+        </button>
+        <a class="icon-btn whatsapp-link" href="#" aria-label="Falar no WhatsApp" data-message="Gostaria de falar sobre as camisas."></a>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Você está aqui">
+          <a href="index.html">Início</a><span>›</span><span>Catálogo</span>
+        </nav>
+        <h1>Catálogo de <span>camisas</span></h1>
+        <p>Clubes do Brasil, gigantes da Europa, seleções e modelos retrô. Pesquise, filtre e monte seu orçamento.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container catalog-layout">
+        <!-- ------------------------------------------------------ Filtros -->
+        <aside class="filters-panel" id="filtersPanel" aria-label="Filtros do catálogo">
+          <h3>Filtros</h3>
+
+          <fieldset class="filter-group">
+            <legend>Categoria</legend>
+            <div data-filter-source="categories"></div>
+          </fieldset>
+
+          <fieldset class="filter-group">
+            <legend>Disponibilidade</legend>
+            <label class="check" for="f-ready"><input type="checkbox" id="f-ready" value="ready" data-filter-group="availability" />Pronta entrega</label>
+            <label class="check" for="f-order"><input type="checkbox" id="f-order" value="order" data-filter-group="availability" />Sob encomenda</label>
+          </fieldset>
+
+          <fieldset class="filter-group">
+            <legend>Destaques</legend>
+            <label class="check" for="f-best"><input type="checkbox" id="f-best" value="bestSeller" data-filter-group="flags" />Mais vendidos</label>
+            <label class="check" for="f-new"><input type="checkbox" id="f-new" value="newArrival" data-filter-group="flags" />Lançamentos</label>
+            <label class="check" for="f-perso"><input type="checkbox" id="f-perso" value="personalization" data-filter-group="flags" />Personalização disponível</label>
+          </fieldset>
+
+          <fieldset class="filter-group">
+            <legend>Tamanho disponível</legend>
+            <div data-filter-source="sizes"></div>
+          </fieldset>
+
+          <fieldset class="filter-group">
+            <legend>Versão</legend>
+            <div data-filter-source="versions"></div>
+          </fieldset>
+
+          <fieldset class="filter-group">
+            <legend>Modelo</legend>
+            <div data-filter-source="models"></div>
+          </fieldset>
+
+          <fieldset class="filter-group">
+            <legend>Temporada</legend>
+            <div data-filter-source="seasons"></div>
+          </fieldset>
+
+          <fieldset class="filter-group">
+            <legend>Time ou seleção</legend>
+            <div data-filter-source="teams"></div>
+          </fieldset>
+
+          <button class="btn btn-outline btn-sm btn-block" id="clearFilters" type="button">Limpar filtros</button>
+        </aside>
+
+        <!-- ------------------------------------------------------ Produtos -->
+        <div>
+          <div class="catalog-toolbar">
+            <div class="field search-field" style="margin:0">
+              <label class="sr-only" for="searchInput">Buscar produtos</label>
+              <input class="input" id="searchInput" type="search" placeholder="Buscar time, seleção, temporada ou código..." />
+            </div>
+            <div class="field" style="margin:0">
+              <label class="sr-only" for="sortSelect">Ordenar</label>
+              <select class="input" id="sortSelect">
+                <option value="featured">Ordenar por destaque</option>
+                <option value="name">Ordenar por nome</option>
+                <option value="availability">Ordenar por disponibilidade</option>
+              </select>
+            </div>
+            <button class="btn btn-outline btn-sm filters-toggle" id="filtersToggle" type="button" aria-expanded="false" aria-controls="filtersPanel">Filtros</button>
+            <p class="result-count" id="resultCount" role="status"></p>
+          </div>
+
+          <div class="active-filters" id="activeFilters"></div>
+
+          <div class="product-grid" id="productGrid" data-sort="featured" aria-busy="true" aria-label="Resultados do catálogo"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contato">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="index.html">
+          <img src="assets/images/brand/primos-sports-shield.svg" alt="" width="40" height="40" loading="lazy" />
+          <span>PRIMO'S <b>SPORTS</b></span>
+        </a>
+        <p data-config="slogan"></p>
+        <p data-config="serviceRegionsText"></p>
+        <p data-config="serviceHours"></p>
+        <p data-legal="companyName"></p>
+        <p data-legal="cnpj"></p>
+        <p data-legal="address"></p>
+      </div>
+      <nav aria-label="Navegação do rodapé">
+        <h4>Navegação</h4>
+        <a href="index.html">Início</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="index.html#precos">Preços</a>
+        <a href="index.html#quem-somos">Quem somos</a>
+      </nav>
+      <div>
+        <h4>Atendimento</h4>
+        <a class="whatsapp-link" href="#" data-message="Preciso de atendimento.">WhatsApp</a>
+        <a data-config-href="email" href="#" data-config="email"></a>
+        <a data-config-href="instagram" href="#" target="_blank" rel="noopener noreferrer" data-config="instagramHandle"></a>
+        <h4 style="margin-top:1rem">Formas de pagamento</h4>
+        <div class="footer-payments" data-payment-methods></div>
+      </div>
+      <nav aria-label="Informações institucionais">
+        <h4>Informações</h4>
+        <a href="entrega-e-pagamento.html">Entrega e pagamento</a>
+        <a href="trocas-e-devolucoes.html">Trocas e devoluções</a>
+        <a href="politica-de-privacidade.html">Política de privacidade</a>
+        <a href="termos-de-uso.html">Termos de uso</a>
+      </nav>
+    </div>
+    <div class="container footer-bottom">
+      © <span id="currentYear">2026</span> Primo's Sports. Todos os direitos reservados.
+    </div>
+  </footer>
+
+  <a class="whatsapp-float whatsapp-link" href="#" aria-label="Falar no WhatsApp" data-message="Vim pelo catálogo do site e quero saber mais."></a>
+
+  <aside class="drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-labelledby="cartDrawerTitle" aria-hidden="true">
+    <div class="drawer-head">
+      <h2 id="cartDrawerTitle">Seu orçamento</h2>
+      <button class="close-btn" id="closeCart" type="button" aria-label="Fechar orçamento">×</button>
+    </div>
+    <div class="drawer-body">
+      <div id="cartItems"></div>
+      <form id="inquiryForm" novalidate>
+        <h3 class="product-category" style="margin-top:1rem">Dados para o atendimento (opcional)</h3>
+        <div class="field">
+          <label for="customerName">Nome</label>
+          <input class="input" type="text" id="customerName" name="customerName" maxlength="60" autocomplete="name" />
+          <p class="field-error" data-error-for="customerName" hidden></p>
+        </div>
+        <div class="field">
+          <label for="city">Cidade</label>
+          <input class="input" type="text" id="city" name="city" maxlength="60" autocomplete="address-level2" />
+        </div>
+        <div class="field">
+          <label for="state">Estado (sigla)</label>
+          <input class="input" type="text" id="state" name="state" maxlength="2" autocomplete="address-level1" placeholder="PE" />
+          <p class="field-error" data-error-for="state" hidden></p>
+        </div>
+        <div class="field">
+          <label for="neighborhood">Bairro</label>
+          <input class="input" type="text" id="neighborhood" name="neighborhood" maxlength="60" />
+        </div>
+        <div class="field">
+          <label for="payment">Forma de pagamento pretendida</label>
+          <select class="input" id="payment" name="payment">
+            <option value="">Prefiro combinar no atendimento</option>
+            <option value="Pix">Pix</option>
+            <option value="Cartão de crédito">Cartão de crédito</option>
+            <option value="Cartão de débito">Cartão de débito</option>
+          </select>
+          <p class="field-error" data-error-for="payment" hidden></p>
+        </div>
+        <div class="field">
+          <label for="notes">Observações</label>
+          <textarea class="input" id="notes" name="notes" maxlength="300"></textarea>
+        </div>
+        <p class="product-meta">As informações preenchidas serão utilizadas apenas para organizar o atendimento pelo WhatsApp. Não pedimos CPF, dados bancários nem número de cartão.</p>
+      </form>
+    </div>
+    <div class="drawer-footer">
+      <div class="summary" id="cartSummary"></div>
+      <button class="btn btn-wa btn-block" id="sendCart" type="button" disabled>Enviar consulta pelo WhatsApp</button>
+      <button class="btn btn-ghost btn-block btn-sm" id="clearCart" type="button">Esvaziar orçamento</button>
+    </div>
+  </aside>
+
+  <div class="modal" id="productModal" role="dialog" aria-modal="true" aria-labelledby="productModalTitle" aria-hidden="true">
+    <div class="modal-dialog">
+      <button class="close-btn modal-close" type="button" aria-label="Fechar detalhes do produto">×</button>
+      <div class="modal-grid"></div>
+      <div class="related-grid"></div>
+    </div>
+  </div>
+
+  <div class="overlay" id="overlay"></div>
+  <div class="toast-stack" id="toastStack" aria-live="polite" aria-atomic="false"></div>
+
+  <script src="assets/js/config.js" defer></script>
+  <script src="assets/js/products.js" defer></script>
+  <script src="assets/js/storage.js" defer></script>
+  <script src="assets/js/validation.js" defer></script>
+  <script src="assets/js/whatsapp.js" defer></script>
+  <script src="assets/js/cart.js" defer></script>
+  <script src="assets/js/catalog.js" defer></script>
+  <script src="assets/js/product-modal.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

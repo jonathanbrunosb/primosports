@@ -250,6 +250,30 @@ const Drawer = {
       note.textContent = BUSINESS_CONFIG.priceNotice;
       el.appendChild(note);
     }
+
+    const incentive = this.incentiveMessage(summary);
+    if (incentive) {
+      const box = document.createElement('p');
+      box.className = 'cart-incentive';
+      box.textContent = incentive;
+      el.appendChild(box);
+    }
+  },
+
+  /** Empurrão contextual para o próximo degrau de economia, sem inventar nada. */
+  incentiveMessage(summary) {
+    const packages = BUSINESS_CONFIG.pricing.packages;
+    const next = packages.find((p) => p.quantity === summary.totalQuantity + 1);
+    if (next) {
+      return `Adicione mais 1 camisa e leve ${next.quantity} por ${formatPrice(next.total)}.`;
+    }
+    if (summary.totalQuantity === packages[packages.length - 1].quantity) {
+      return 'Você atingiu a melhor condição disponível no site.';
+    }
+    if (summary.requiresQuote) {
+      return 'Solicite uma condição especial pelo WhatsApp.';
+    }
+    return '';
   },
 
   send() {
@@ -339,6 +363,35 @@ function initDestaquesCarousel() {
   updateArrows();
 }
 
+/** Dropdown "Categorias" do menu: clique, teclado, Esc e fechar ao clicar fora. */
+function initNavDropdowns() {
+  const closeAll = (except) => {
+    document.querySelectorAll('.nav-dropdown-menu.open').forEach((menu) => {
+      if (menu === except) return;
+      menu.classList.remove('open');
+      const btn = menu.previousElementSibling;
+      if (btn) btn.setAttribute('aria-expanded', 'false');
+    });
+  };
+
+  document.querySelectorAll('.nav-dropdown-toggle').forEach((btn) => {
+    const menu = document.getElementById(btn.getAttribute('aria-controls'));
+    if (!menu) return;
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const willOpen = !menu.classList.contains('open');
+      closeAll(willOpen ? menu : null);
+      menu.classList.toggle('open', willOpen);
+      btn.setAttribute('aria-expanded', String(willOpen));
+    });
+  });
+
+  document.addEventListener('click', () => closeAll());
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeAll();
+  });
+}
+
 /* --------------------------------------------------------------- Cabeçalho */
 function initHeader() {
   const toggle = document.querySelector('.menu-toggle');
@@ -367,6 +420,8 @@ function initHeader() {
       }
     });
   }
+
+  initNavDropdowns();
 
   document.getElementById('cartBtn')?.prepend(icon('cart'));
   document.getElementById('favoritesBtn')?.prepend(icon('heart'));

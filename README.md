@@ -248,14 +248,14 @@ Nomes em minúsculas, sem acentos e com hífen — ajuda no Google Imagens.
 > Use apenas fotos suas ou com autorização de uso. Não copie imagens de sites de clubes,
 > marcas esportivas ou concorrentes.
 
-**Produtos já com foto real:** Real Madrid, Barcelona, Paris Saint-Germain e Bayern de
-Munique (todos titular 2025/2026), a partir de fotos fornecidas com autorização do
-fornecedor. O fundo já veio recortado/transparente em alguns arquivos; nos demais, o fundo
-branco foi removido por detecção de componentes conectados (mesma técnica usada na logo).
-Para esses 4 produtos, as fotos `-escudo`, `-tecido` e `-detalhe` foram geradas por recorte
-automático da foto de frente (close-up de uma região do peito, do tecido e da gola) — não
-são fotos dedicadas de cada detalhe. Substitua por fotos reais desses close-ups quando
-tiver disponível, mantendo os mesmos nomes de arquivo.
+**Produtos já com foto real:** Real Madrid titular e segundo uniforme, Barcelona, Paris
+Saint-Germain, Bayern de Munique e Borussia Dortmund, a partir de fotos fornecidas com
+autorização do fornecedor. O fundo já veio recortado/transparente em alguns arquivos; nos
+demais, o fundo branco foi removido por detecção de componentes conectados (mesma técnica
+usada na logo). Para esses produtos, as fotos `-escudo`, `-tecido` e `-detalhe` foram
+geradas por recorte automático da foto de frente (close-up de uma região do peito, do
+tecido e da gola) — não são fotos dedicadas de cada detalhe. Substitua por fotos reais
+desses close-ups quando tiver disponível, mantendo os mesmos nomes de arquivo.
 
 ### Imagens do hero (primeira dobra da home)
 
@@ -450,7 +450,7 @@ Tudo que ainda é provisório está marcado no código com o comentário `PENDEN
 |---|---|---|
 | Número do WhatsApp | `config.js` → `whatsappNumber` | **fictício** (`5581999999999`) |
 | Produtos e estoque | `products.js` | demonstrativos |
-| Fotos dos produtos | `assets/images/products/` | 4 produtos com foto real (Real Madrid, Barcelona, PSG, Bayern de Munique); os demais usam placeholder |
+| Fotos dos produtos | `assets/images/products/` | 6 produtos com foto real (Real Madrid titular e segundo uniforme, Barcelona, PSG, Bayern de Munique, Borussia Dortmund); os demais usam placeholder |
 | Logo, favicon, imagem social | `assets/images/brand/` | ✅ logo oficial aplicada |
 | Razão social, CNPJ, endereço | `config.js` → `legal` | vazios (não exibidos) |
 | Regra para 4+ camisas | `config.js` → `pricing` | não definida (vai para consulta) |

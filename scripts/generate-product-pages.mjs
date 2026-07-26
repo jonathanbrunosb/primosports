@@ -88,10 +88,13 @@ function buildRelated(product, PRODUCTS) {
     .filter((p) => p.id !== product.id && (p.category === product.category || p.team === product.team))
     .slice(0, 4);
   if (!related.length) return '';
-  const items = related.map((p) => `          <a class="related-card" href="${p.id}.html">
-            <img src="../${p.placeholder}" alt="Camisa ${esc(p.team)} ${esc(p.model)} ${esc(p.season)}" width="300" height="300" loading="lazy" decoding="async" />
+  const items = related.map((p) => {
+    const src = p.imagesPending ? p.placeholder : p.images[0].src;
+    return `          <a class="related-card" href="${p.id}.html">
+            <img src="../${src}" alt="Camisa ${esc(p.team)} ${esc(p.model)} ${esc(p.season)}" width="300" height="300" loading="lazy" decoding="async" />
             <span>${esc(p.team)} ${esc(p.season)}</span>
-          </a>`).join('\n');
+          </a>`;
+  }).join('\n');
   return `      <section class="section">
         <div class="container">
           <h2 class="product-category" style="margin-bottom:1rem">Produtos relacionados</h2>

@@ -1,0 +1,25 @@
+# Verificação básica de disponibilidade da página inicial.
+# Não envia notificações: o resultado aparece na aba Actions do repositório.
+# Para alertas por e-mail/telefone, use um serviço externo (UptimeRobot,
+# Better Stack, StatusCake). Ver README.
+name: Verificar site no ar
+
+on:
+  schedule:
+    - cron: '0 */6 * * *' # a cada 6 horas
+  workflow_dispatch: {}    # permite acionar manualmente
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checar página inicial
+        run: |
+          URL="https://jonathanbrunosb.github.io/primosports/"
+          echo "Verificando $URL"
+          CODE=$(curl -s -o /dev/null -w "%{http_code}" --max-time 30 --retry 2 "$URL")
+          echo "HTTP $CODE"
+          test "$CODE" = "200"

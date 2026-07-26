@@ -1,0 +1,7 @@
+# Primo's Sports
+User-agent: *
+Allow: /
+Disallow: /404.html
+
+# Atualize a URL abaixo ao configurar um domínio próprio.
+Sitemap: https://jonathanbrunosb.github.io/primosports/sitemap.xml

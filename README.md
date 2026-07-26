@@ -313,17 +313,23 @@ atendimento é por WhatsApp e não há loja física, cadastre como negócio de �
 A logo oficial já está aplicada em `assets/images/brand/`, recortada a partir do arquivo
 `logo-primos-original.jpeg` (mantido no repositório como referência para gerar novos recortes).
 
-| Arquivo | Uso | Tamanho |
-|---|---|---|
-| `logo-primos-original.jpeg` | arquivo-fonte da logo, não usado diretamente no site | 1320 × 924 |
-| `primos-sports-shield.png` | escudo, cabeçalho e rodapé | 512 × 512 |
-| `primos-sports-logo.png` | logo completa (escudo + PRIMO'S SPORTS) | 900 × 900 |
-| `favicon-32x32.png` / `favicon-16x16.png` | ícone da aba | 32×32 / 16×16 |
-| `apple-touch-icon.png` | ícone ao salvar no iPhone | 180 × 180 |
-| `social-share-primos-sports.jpg` | pré-visualização de link no WhatsApp/Instagram | 1200 × 630 |
+| Arquivo | Uso | Tamanho | Fundo |
+|---|---|---|---|
+| `logo-primos-original.jpeg` | arquivo-fonte da logo, não usado diretamente no site | 1320 × 924 | branco |
+| `primos-sports-shield.png` | escudo, cabeçalho e rodapé | 160 × 160 | **transparente** |
+| `primos-sports-logo.png` | logo completa (escudo + PRIMO'S SPORTS) | 600 × 600 | transparente (recorte automático, pode ter pequenas imperfeições na borda do texto) |
+| `favicon-32x32.png` / `favicon-16x16.png` | ícone da aba | 32×32 / 16×16 | sólido (marca) |
+| `apple-touch-icon.png` | ícone ao salvar no iPhone | 180 × 180 | sólido (marca) |
+| `social-share-primos-sports.jpg` | pré-visualização de link no WhatsApp/Instagram | 1200 × 630 | sólido |
 
-Se receber uma versão em alta resolução com fundo transparente, é só substituir os arquivos
-acima mantendo os mesmos nomes e proporções — nenhum HTML precisa mudar.
+O fundo branco original foi removido via detecção de componentes conectados (mantém intactos
+os brilhos metálicos do escudo, que não tocam a borda da imagem). Favicon e apple-touch-icon
+usam fundo sólido escuro de propósito — a maioria dos navegadores não trata bem ícone
+transparente sobre aba clara.
+
+Se receber uma versão em alta resolução com fundo já transparente (arquivo `.png` de verdade,
+não JPEG), é só substituir os arquivos acima mantendo os mesmos nomes e proporções — nenhum
+HTML precisa mudar.
 
 > Ao trocar a logo, use o arquivo com fundo transparente quando possível. Não recorte o fundo
 > "na mão" nem estique a imagem para caber.

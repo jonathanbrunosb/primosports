@@ -102,8 +102,20 @@ main { position: relative; z-index: 1; }
 .menu-toggle { display: none; }
 
 /* ------------------------------------------------------------------ Hero */
-.hero { padding: clamp(2.5rem, 6vw, 4.5rem) 0; }
+/* Ambiente de "estádio" só com CSS: feixes de luz + vinheta, sem depender
+   de foto de terceiros. */
+.hero {
+  position: relative;
+  padding: clamp(2.5rem, 6vw, 4.5rem) 0;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 60% 45% at 82% 8%, rgba(118, 255, 3, 0.16) 0%, transparent 65%),
+    repeating-conic-gradient(from 200deg at 78% 0%, rgba(255, 255, 255, 0.05) 0deg 2deg, transparent 2deg 14deg),
+    radial-gradient(ellipse 90% 60% at 50% 100%, rgba(0, 0, 0, 0.55) 0%, transparent 70%);
+}
 .hero-grid {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
   gap: clamp(1.5rem, 4vw, 3rem);
@@ -423,12 +435,18 @@ footer {
 .footer-grid > div > p { color: var(--text-dim); font-size: var(--fs-sm); margin-top: 0.75rem; max-width: 40ch; }
 .footer-payments { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
 .footer-payments span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
   border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  padding: 0.3rem 0.7rem 0.3rem 0.55rem;
   font-size: var(--fs-xs);
+  font-weight: 700;
   color: var(--text-muted);
+  background: var(--surface-2);
 }
+.footer-payments svg { width: 15px; height: 15px; color: var(--neon); flex-shrink: 0; }
 .footer-bottom {
   border-top: 1px solid var(--border);
   padding: 1.25rem;

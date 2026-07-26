@@ -164,6 +164,15 @@ const PRODUCTS = [
     sizes: sizes([E, 0], [E, 0], [E, 0], [E, 0], [E, 0])
   },
   {
+    id: 'real-madrid-segundo-2025-2026', sku: 'PS-RMA-A-2526', team: 'Real Madrid', season: '2025/2026',
+    model: 'Segundo uniforme', category: 'Europa', subcategory: 'Espanha', version: 'Torcedor',
+    priceReference: 150, personalizationAvailable: true, deliveryType: 'Sob encomenda',
+    featured: false, bestSeller: false, newArrival: true,
+    description: 'Segundo uniforme do Real Madrid, em verde, versão torcedor, com tecido leve e escudo aplicado.',
+    folder: 'real-madrid', slug: 'camisa-real-madrid-segundo-2025-2026', imagesPending: false,
+    sizes: sizes([E, 0], [E, 0], [E, 0], [E, 0], [E, 0])
+  },
+  {
     id: 'barcelona-titular-2025-2026', sku: 'PS-BAR-H-2526', team: 'Barcelona', season: '2025/2026',
     model: 'Titular', category: 'Europa', subcategory: 'Espanha', version: 'Torcedor',
     priceReference: 150, personalizationAvailable: true, deliveryType: 'Pronta entrega',
@@ -225,6 +234,15 @@ const PRODUCTS = [
     description: 'Camisa titular do Bayern de Munique em versão torcedor, com tecido dry e escudo aplicado.',
     folder: 'bayern-munique', slug: 'camisa-bayern-munique-titular-2025-2026', imagesPending: false,
     sizes: sizes([E, 0], [A, 2], [E, 0], [E, 0], [X, 0])
+  },
+  {
+    id: 'borussia-dortmund-titular-2025-2026', sku: 'PS-BVB-H-2526', team: 'Borussia Dortmund', season: '2025/2026',
+    model: 'Titular', category: 'Europa', subcategory: 'Alemanha', version: 'Torcedor',
+    priceReference: 150, personalizationAvailable: true, deliveryType: 'Sob encomenda',
+    featured: false, bestSeller: false, newArrival: true,
+    description: 'Camisa titular do Borussia Dortmund em versão torcedor, com tecido leve e escudo aplicado.',
+    folder: 'borussia-dortmund', slug: 'camisa-borussia-dortmund-titular-2025-2026', imagesPending: false,
+    sizes: sizes([E, 0], [E, 0], [E, 0], [E, 0], [E, 0])
   },
   {
     id: 'milan-titular-2025-2026', sku: 'PS-MIL-H-2526', team: 'Milan', season: '2025/2026',

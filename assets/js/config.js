@@ -91,7 +91,7 @@ const BUSINESS_CONFIG = {
     // PENDENTE: trocar pela URL final quando o domínio for definido.
     // Enquanto for GitHub Pages: https://<usuario>.github.io/primosports/
     siteUrl: 'https://jonathanbrunosb.github.io/primosports/',
-    shareImage: 'assets/images/brand/social-share-primos-sports.svg',
+    shareImage: 'assets/images/brand/social-share-primos-sports.jpg',
     locale: 'pt_BR'
   },
 

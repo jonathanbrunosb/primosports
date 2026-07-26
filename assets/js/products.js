@@ -224,7 +224,7 @@ const PRODUCTS = [
     priceReference: 150, personalizationAvailable: true, deliveryType: 'Pronta entrega',
     featured: false, bestSeller: true, newArrival: false,
     description: 'Camisa titular do Liverpool, versão torcedor, com escudo aplicado e acabamento premium.',
-    folder: 'liverpool', slug: 'camisa-liverpool-titular-2025-2026', imagesPending: true,
+    folder: 'liverpool', slug: 'camisa-liverpool-titular-2025-2026', imagesPending: false,
     sizes: sizes([A, 3], [A, 3], [A, 4], [L, 1], [E, 0])
   },
   {
@@ -261,6 +261,18 @@ const PRODUCTS = [
     featured: false, bestSeller: false, newArrival: true,
     description: 'Camisa titular do Borussia Dortmund em versão torcedor, com tecido leve e escudo aplicado.',
     folder: 'borussia-dortmund', slug: 'camisa-borussia-dortmund-titular-2025-2026', imagesPending: false,
+    sizes: sizes([E, 0], [E, 0], [E, 0], [E, 0], [E, 0])
+  },
+  {
+    // PENDENTE: confirmar com o fornecedor se este uniforme é o segundo ou o terceiro.
+    // A foto mostra o modelo azul-marinho com detalhes em amarelo, que não é o uniforme
+    // titular do Arsenal (vermelho com mangas brancas).
+    id: 'arsenal-alternativo-2025-2026', sku: 'PS-ARS-A-2526', team: 'Arsenal', season: '2025/2026',
+    model: 'Uniforme alternativo', category: 'Europa', subcategory: 'Inglaterra', version: 'Torcedor',
+    priceReference: 150, personalizationAvailable: true, deliveryType: 'Sob encomenda',
+    featured: false, bestSeller: false, newArrival: true,
+    description: 'Uniforme alternativo do Arsenal em azul-marinho com detalhes em amarelo, versão torcedor, com tecido leve e escudo aplicado.',
+    folder: 'arsenal', slug: 'camisa-arsenal-alternativo-2025-2026', imagesPending: false,
     sizes: sizes([E, 0], [E, 0], [E, 0], [E, 0], [E, 0])
   },
   {

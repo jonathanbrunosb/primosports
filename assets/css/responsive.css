@@ -22,8 +22,12 @@
     min-height: 0;
     padding-block: 1rem 1.25rem;
   }
-  .hero-products { order: -1; min-height: 240px; margin-bottom: 0.25rem; }
-  .hero-product-main { width: min(320px, 58%); }
+  .hero-products { order: -1; min-height: 300px; margin-bottom: 0.25rem; }
+  /* Os deslocamentos do desktop estouram a largura no celular: aqui o trio é
+     reduzido e reaproximado para caber sem corte. */
+  .hero-product-main { width: min(210px, 44%); transform: translateX(-28%); }
+  .hero-product-a { width: min(196px, 41%); transform: translateX(2%) translateY(-4%); }
+  .hero-product-b { width: min(184px, 38%); transform: translateX(32%) translateY(-2%); }
   .hero-copy p { margin-bottom: 1.1rem; }
   .hero-cta {
     flex-direction: column;
@@ -44,8 +48,10 @@
 @media (max-width: 720px) {
   .hero-benefits-grid { grid-template-columns: repeat(2, 1fr); }
   .hero-benefit { border-left: 0 !important; border-top: 1px solid var(--border); padding: 0.5rem 0.6rem; gap: 0.5rem; }
-  .hero-benefit b { font-size: 0.82rem; letter-spacing: 0.02em; }
-  .hero-benefit small { font-size: 0.72rem; }
+  .hero-benefit { justify-content: flex-start; min-width: 0; }
+  .hero-benefit b { font-size: 0.76rem; letter-spacing: 0; line-height: 1.2; }
+  .hero-benefit small { font-size: 0.7rem; }
+  .hero-benefit span { min-width: 0; overflow-wrap: anywhere; }
   .hero-benefit > svg { width: 22px; height: 22px; }
   .hero-benefit:nth-child(1),
   .hero-benefit:nth-child(2) { border-top: 0; }

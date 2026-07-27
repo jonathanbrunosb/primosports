@@ -307,14 +307,16 @@ repositório — depois de convertidos, não têm mais uso no site.
 
 Toda a arte do hero é **gerada por script** (numpy/Pillow) — nada de terceiros, sem risco
 de licença. As três camisas são **mockups genéricos**: silhueta em gola V nas cores dos
-times, sem escudo, patrocinador ou marca. As fotos reais dos produtos continuam onde
-importam para vender: no catálogo e nas páginas de produto.
+times, sem escudo, patrocinador ou marca, com textura de tecido sutil (jacquard em
+losango na camisa branca, tramado diagonal nas listradas) para não ficarem com cara de
+vetor plano. As fotos reais dos produtos continuam onde importam para vender: no
+catálogo e nas páginas de produto.
 
 | Arquivo | Uso | Peso |
 |---|---|---|
-| `camisa-flamengo-hero.webp` | mockup rubro-negro, em primeiro plano | 43 KB |
-| `camisa-real-madrid-hero.webp` | mockup branco, ao centro | 47 KB |
-| `camisa-barcelona-hero.webp` | mockup azul e grená, ao fundo | 42 KB |
+| `camisa-flamengo-hero.webp` | mockup rubro-negro, em primeiro plano | 51 KB |
+| `camisa-real-madrid-hero.webp` | mockup branco, ao centro | 48 KB |
+| `camisa-barcelona-hero.webp` | mockup azul e grená, ao fundo | 52 KB |
 | `hero-stadium-background.webp` | estádio noturno com refletores | 39 KB |
 | `hero-smoke-green.webp` | fumaça verde na base | 84 KB |
 

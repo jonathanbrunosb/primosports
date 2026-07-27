@@ -32,7 +32,7 @@
 
   <!-- Só a imagem principal do hero recebe preload (a camisa em destaque);
        fundo e camisas de apoio carregam eager/async normalmente. -->
-  <link rel="preload" as="image" href="assets/images/hero/camisa-flamengo-hero.webp" fetchpriority="high" />
+  <link rel="preload" as="image" href="assets/images/hero/camisas-hero-composite.webp" fetchpriority="high" />
 
   <link rel="stylesheet" href="assets/css/variables.css" />
   <link rel="stylesheet" href="assets/css/reset.css" />
@@ -148,26 +148,10 @@
 
         <div class="hero-products reveal">
           <img
-            class="hero-product hero-product-back hero-product-b"
-            src="assets/images/hero/camisa-barcelona-hero.webp"
-            alt="Camisa azul e grená de clube europeu"
-            width="881" height="1013"
-            loading="eager"
-            decoding="async"
-          />
-          <img
-            class="hero-product hero-product-back hero-product-a"
-            src="assets/images/hero/camisa-real-madrid-hero.webp"
-            alt="Camisa branca de clube europeu"
-            width="881" height="1013"
-            loading="eager"
-            decoding="async"
-          />
-          <img
-            class="hero-product hero-product-main"
-            src="assets/images/hero/camisa-flamengo-hero.webp"
-            alt="Camisa rubro-negra em destaque na coleção Primo's Sports"
-            width="881" height="1013"
+            class="hero-product-composite"
+            src="assets/images/hero/camisas-hero-composite.webp"
+            alt="Três camisas de futebol sobrepostas: rubro-negra em destaque, com uma branca e uma azul e grená atrás"
+            width="1186" height="809"
             fetchpriority="high"
             decoding="async"
           />

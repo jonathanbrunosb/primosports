@@ -22,12 +22,8 @@
     min-height: 0;
     padding-block: 1rem 1.25rem;
   }
-  .hero-products { order: -1; min-height: 300px; margin-bottom: 0.25rem; }
-  /* Os deslocamentos do desktop estouram a largura no celular: aqui o trio é
-     reduzido e reaproximado para caber sem corte. */
-  .hero-product-main { width: min(210px, 44%); transform: translateX(-28%); }
-  .hero-product-a { width: min(196px, 41%); transform: translateX(2%) translateY(-4%); }
-  .hero-product-b { width: min(184px, 38%); transform: translateX(32%) translateY(-2%); }
+  .hero-products { order: -1; min-height: 220px; margin-bottom: 0.25rem; }
+  .hero-product-composite { width: min(420px, 88%); }
   .hero-copy p { margin-bottom: 1.1rem; }
   .hero-cta {
     flex-direction: column;
@@ -107,8 +103,8 @@
 @media (max-width: 380px) {
   .container { padding-inline: 1rem; }
   .product-grid { grid-template-columns: 1fr; }
-  .hero-products { min-height: 260px; }
-  .hero-product-main { width: min(280px, 60%); }
+  .hero-products { min-height: 200px; }
+  .hero-product-composite { width: min(320px, 90%); }
 }
 
 /* Paisagem em telas baixas: evita drawer/modal cortados */

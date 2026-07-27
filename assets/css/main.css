@@ -209,11 +209,11 @@ main { position: relative; z-index: 1; }
   position: absolute;
   inset: auto 0 0 0;
   width: 100%;
-  height: 66%;
+  height: 70%;
   object-fit: cover;
   object-position: center bottom;
   z-index: 2;
-  opacity: 0.42;
+  opacity: 0.52;
   mix-blend-mode: screen;
   pointer-events: none;
 }
@@ -237,8 +237,8 @@ main { position: relative; z-index: 1; }
   grid-template-columns: 46% 54%;
   align-items: center;
   gap: clamp(1.5rem, 4vw, 3rem);
-  padding-block: clamp(2.5rem, 6vw, 5rem);
-  min-height: 620px;
+  padding-block: clamp(2rem, 4.5vw, 3.5rem);
+  min-height: 540px;
 }
 
 .eyebrow {
@@ -288,28 +288,28 @@ main { position: relative; z-index: 1; }
   position: relative;
   display: grid;
   place-items: center;
-  min-height: 470px;
+  min-height: 500px;
 }
 .hero-product {
   position: absolute;
   filter: drop-shadow(0 22px 34px rgba(0, 0, 0, 0.6));
 }
 .hero-product-main {
-  width: min(310px, 56%);
-  transform: translateX(-30%);
+  width: min(346px, 54%);
+  transform: translateX(-46%);
   z-index: 3;
 }
 .hero-product-back { z-index: 2; }
 .hero-product-a {
-  width: min(290px, 52%);
-  transform: translateX(2%) translateY(-3%);
-  opacity: 0.95;
+  width: min(322px, 50%);
+  transform: translateX(3%) translateY(-4%);
+  opacity: 0.96;
   z-index: 2;
 }
 .hero-product-b {
-  width: min(272px, 49%);
-  transform: translateX(32%) translateY(-1%);
-  opacity: 0.85;
+  width: min(302px, 47%);
+  transform: translateX(52%) translateY(-2%);
+  opacity: 0.88;
   filter: drop-shadow(0 18px 26px rgba(0, 0, 0, 0.55)) brightness(0.9);
   z-index: 1;
 }

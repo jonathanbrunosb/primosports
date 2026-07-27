@@ -207,13 +207,13 @@ main { position: relative; z-index: 1; }
    a apaga por completo. */
 .hero-smoke {
   position: absolute;
-  inset: auto 0 0 0;
-  width: 100%;
-  height: 60%;
+  inset: auto 0 0 auto;
+  width: 76%;
+  height: 46%;
   object-fit: cover;
-  object-position: center bottom;
+  object-position: right bottom;
   z-index: 2;
-  opacity: 0.62;
+  opacity: 0.68;
   mix-blend-mode: screen;
   pointer-events: none;
 }

@@ -86,7 +86,7 @@ const PRODUCTS = [
     priceReference: 150, personalizationAvailable: true, deliveryType: 'Pronta entrega',
     featured: true, bestSeller: true, newArrival: false,
     description: 'Camisa titular do Palmeiras, versão torcedor, com tecido dry premium e escudo aplicado.',
-    folder: 'palmeiras', slug: 'camisa-palmeiras-titular-2026', imagesPending: true,
+    folder: 'palmeiras', slug: 'camisa-palmeiras-titular-2026', imagesPending: false,
     sizes: sizes([A, 5], [A, 5], [A, 3], [L, 2], [E, 0])
   },
   {
@@ -206,7 +206,7 @@ const PRODUCTS = [
     priceReference: 150, personalizationAvailable: true, deliveryType: 'Pronta entrega',
     featured: false, bestSeller: false, newArrival: true,
     description: 'Camisa titular do Manchester City, versão torcedor, com tecido respirável e acabamento reforçado.',
-    folder: 'manchester-city', slug: 'camisa-manchester-city-titular-2025-2026', imagesPending: true,
+    folder: 'manchester-city', slug: 'camisa-manchester-city-titular-2025-2026', imagesPending: false,
     sizes: sizes([A, 2], [A, 4], [A, 2], [E, 0], [X, 0])
   },
   {
@@ -328,7 +328,7 @@ const PRODUCTS = [
     priceReference: 150, personalizationAvailable: true, deliveryType: 'Sob encomenda',
     featured: false, bestSeller: false, newArrival: true,
     description: 'Camisa titular da seleção de Portugal, versão torcedor, com tecido respirável.',
-    folder: 'portugal', slug: 'camisa-portugal-titular-2026', imagesPending: true,
+    folder: 'portugal', slug: 'camisa-portugal-titular-2026', imagesPending: false,
     sizes: sizes([E, 0], [A, 2], [L, 1], [E, 0], [X, 0])
   },
   {

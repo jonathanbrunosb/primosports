@@ -291,21 +291,27 @@ Cada card em "Escolha sua categoria" usa uma arte 4:3 em `assets/images/banners/
 
 ### Imagens do hero (primeira dobra da home)
 
-As três camisas do hero são recortes das fotos reais já usadas no catálogo. O fundo de
-estádio e a fumaça são **gerados por script** (`/tmp` durante o desenvolvimento, com
-numpy/Pillow) — não são fotos de terceiros, portanto não têm risco de licença.
+Toda a arte do hero é **gerada por script** (numpy/Pillow) — nada de terceiros, sem risco
+de licença. As três camisas são **mockups genéricos**: silhueta em gola V nas cores dos
+times, sem escudo, patrocinador ou marca. As fotos reais dos produtos continuam onde
+importam para vender: no catálogo e nas páginas de produto.
 
 | Arquivo | Uso | Peso |
 |---|---|---|
-| `camisa-flamengo-hero.webp` | camisa principal, em primeiro plano | 36 KB |
-| `camisa-real-madrid-hero.webp` | camisa de apoio, ao centro | 53 KB |
-| `camisa-barcelona-hero.webp` | camisa de apoio, mais ao fundo | 49 KB |
-| `hero-stadium-background.webp` | estádio noturno com refletores | 20 KB |
-| `hero-smoke-green.webp` | fumaça verde na base | 40 KB |
+| `camisa-flamengo-hero.webp` | mockup rubro-negro, em primeiro plano | 43 KB |
+| `camisa-real-madrid-hero.webp` | mockup branco, ao centro | 47 KB |
+| `camisa-barcelona-hero.webp` | mockup azul e grená, ao fundo | 42 KB |
+| `hero-stadium-background.webp` | estádio noturno com refletores | 39 KB |
+| `hero-smoke-green.webp` | fumaça verde na base | 84 KB |
 
 **Ordem das camadas do hero** (erra fácil): fundo `z-index: 0`, vinheta `.hero::before`
 `z-index: 1`, fumaça `z-index: 2`, conteúdo `z-index: 3`. Se a fumaça for para trás da
 vinheta ela simplesmente some.
+
+**Dose da fumaça e do gramado:** as duas passam fácil do ponto. Fumaça acima de ~0.65 de
+opacidade, ou cobrindo mais que a faixa inferior, vira uma parede verde que come a
+legibilidade do título. O gramado do fundo também: na referência ele é discreto e quem dá
+o verde forte é a fumaça, não o campo.
 
 Todos dentro da meta de performance do projeto (fundo < 250 KB, camisa principal < 180 KB,
 camisas de apoio < 120 KB, névoa < 80 KB). Para substituir por fotos reais, mantenha os

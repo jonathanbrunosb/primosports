@@ -17,7 +17,9 @@ const ICON_PATHS = {
   box: 'M12 2 3 6.5v11L12 22l9-4.5v-11L12 2Zm0 2.2 6.4 3.2L12 10.6 5.6 7.4 12 4.2Z',
   chat: 'M4 3h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H8l-4 4V5a2 2 0 0 1 2-2Z',
   exchange: 'M7 3 3 7l4 4V8h9V6H7V3Zm10 6-4 4v3H4v2h9v3l4-4-4-4Z',
-  bolt: 'M13 2 3 14h6l-2 8 10-12h-6l2-8Z'
+  bolt: 'M13 2 3 14h6l-2 8 10-12h-6l2-8Z',
+  headset: 'M12 2a9 9 0 0 0-9 9v5a3 3 0 0 0 3 3h1a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1H5v-1a7 7 0 0 1 14 0v1h-2a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h1a3 3 0 0 0 .82-.12A3 3 0 0 1 16 22h-2v-2h2a1 1 0 0 0 1-1 3 3 0 0 0 4-2.83V11a9 9 0 0 0-9-9Z',
+  arrowRight: 'M13.2 5.4 11.8 6.8 16 11H4v2h12l-4.2 4.2 1.4 1.4L20 12l-6.8-6.6Z'
 };
 
 /** Cria um <svg> a partir do catálogo de ícones. */

@@ -267,18 +267,34 @@ preferido para os próximos produtos.
 > (gola, listras de ombro) que encostam na silhueta. Só o limiar conservador deixa auréola;
 > só o permissivo come as listras.
 
+### Banners de categoria
+
+Cada card em "Escolha sua categoria" usa uma arte 4:3 em `assets/images/banners/`
+(`categoria-brasileirao.webp`, `categoria-europa.webp`, `categoria-selecoes.webp`,
+`categoria-retros.webp`), fornecidas pelo lojista e convertidas para WebP 960×720
+(~70–90 KB cada, contra 2,3 MB do PNG original).
+
+> O nome da categoria **já vem gravado na arte**. Por isso o `<h3>` do card fica com a
+> classe `sr-only`: continua existindo para leitores de tela e para o Google, mas não
+> aparece duplicado na tela. Se trocar por uma arte sem o nome gravado, remova o `sr-only`.
+
 ### Imagens do hero (primeira dobra da home)
 
-As três camisas e o fundo de estádio do hero em `index.html` também são placeholders locais,
-em `assets/images/hero/`:
+As três camisas do hero são recortes das fotos reais já usadas no catálogo. O fundo de
+estádio e a fumaça são **gerados por script** (`/tmp` durante o desenvolvimento, com
+numpy/Pillow) — não são fotos de terceiros, portanto não têm risco de licença.
 
 | Arquivo | Uso | Peso |
 |---|---|---|
 | `camisa-flamengo-hero.webp` | camisa principal, em primeiro plano | 36 KB |
-| `camisa-real-madrid-hero.webp` | camisa de apoio, ao fundo | 38 KB |
-| `camisa-barcelona-hero.webp` | camisa de apoio, mais ao fundo | 62 KB |
-| `hero-stadium-background.webp` | fundo do hero (estádio/luz) | 6,5 KB |
-| `hero-smoke-green.webp` | névoa verde sobre o fundo | 54 KB |
+| `camisa-real-madrid-hero.webp` | camisa de apoio, ao centro | 53 KB |
+| `camisa-barcelona-hero.webp` | camisa de apoio, mais ao fundo | 49 KB |
+| `hero-stadium-background.webp` | estádio noturno com refletores | 20 KB |
+| `hero-smoke-green.webp` | fumaça verde na base | 40 KB |
+
+**Ordem das camadas do hero** (erra fácil): fundo `z-index: 0`, vinheta `.hero::before`
+`z-index: 1`, fumaça `z-index: 2`, conteúdo `z-index: 3`. Se a fumaça for para trás da
+vinheta ela simplesmente some.
 
 Todos dentro da meta de performance do projeto (fundo < 250 KB, camisa principal < 180 KB,
 camisas de apoio < 120 KB, névoa < 80 KB). Para substituir por fotos reais, mantenha os

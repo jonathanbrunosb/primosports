@@ -305,20 +305,25 @@ repositório — depois de convertidos, não têm mais uso no site.
 
 ### Imagens do hero (primeira dobra da home)
 
-Toda a arte do hero é **gerada por script** (numpy/Pillow) — nada de terceiros, sem risco
-de licença. As três camisas são **mockups genéricos**: silhueta em gola V nas cores dos
-times, sem escudo, patrocinador ou marca, com textura de tecido sutil (jacquard em
-losango na camisa branca, tramado diagonal nas listradas) para não ficarem com cara de
-vetor plano. As fotos reais dos produtos continuam onde importam para vender: no
+O fundo de estádio e a fumaça são **gerados por script** (numpy/Pillow) — nada de
+terceiros, sem risco de licença. As três camisas (mockups genéricos, sem escudo,
+patrocinador ou marca de time real) vêm em uma **única imagem já composta**
+(`camisas-hero-composite.webp`), recortada por chroma key de uma referência fornecida
+pelo lojista em fundo verde — não são três `<img>` empilhadas via CSS como nas versões
+anteriores. As fotos reais dos produtos continuam onde importam para vender: no
 catálogo e nas páginas de produto.
 
 | Arquivo | Uso | Peso |
 |---|---|---|
-| `camisa-flamengo-hero.webp` | mockup rubro-negro, em primeiro plano | 51 KB |
-| `camisa-real-madrid-hero.webp` | mockup branco, ao centro | 48 KB |
-| `camisa-barcelona-hero.webp` | mockup azul e grená, ao fundo | 52 KB |
+| `camisas-hero-composite.webp` | as três camisas já sobrepostas, uma única imagem | 137 KB |
 | `hero-stadium-background.webp` | estádio noturno com refletores | 39 KB |
 | `hero-smoke-green.webp` | fumaça verde na base | 84 KB |
+
+**Se um dia quiser voltar a ter as três camisas em imagens separadas** (para animar cada
+uma independente, por exemplo), vai precisar recortar cada uma manualmente a partir do
+arquivo verde original ou de uma nova referência — elas se sobrepõem na composição, então
+uma extração automática por região sai com pedaço da camisa vizinha (foi o que aconteceu
+na primeira tentativa desta rodada).
 
 **Ordem das camadas do hero** (erra fácil): fundo `z-index: 0`, vinheta `.hero::before`
 `z-index: 1`, fumaça `z-index: 2`, conteúdo `z-index: 3`. Se a fumaça for para trás da

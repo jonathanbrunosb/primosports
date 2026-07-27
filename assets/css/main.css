@@ -281,37 +281,18 @@ main { position: relative; z-index: 1; }
 
 
 
-/* Composição das três camisas: escalonadas da esquerda para a direita, com a
-   camisa principal à frente e as outras duas recuadas — as três ficam
-   visíveis, como na referência de capa. */
+/* As três camisas vêm em uma única imagem já composta (recorte de croma da
+   foto de referência fornecida) — evita recriar a sobreposição via CSS. */
 .hero-products {
   position: relative;
   display: grid;
   place-items: center;
   min-height: 500px;
 }
-.hero-product {
-  position: absolute;
+.hero-product-composite {
+  width: min(620px, 92%);
+  height: auto;
   filter: drop-shadow(0 22px 34px rgba(0, 0, 0, 0.6));
-}
-.hero-product-main {
-  width: min(346px, 54%);
-  transform: translateX(-46%);
-  z-index: 3;
-}
-.hero-product-back { z-index: 2; }
-.hero-product-a {
-  width: min(322px, 50%);
-  transform: translateX(3%) translateY(-4%);
-  opacity: 0.96;
-  z-index: 2;
-}
-.hero-product-b {
-  width: min(302px, 47%);
-  transform: translateX(52%) translateY(-2%);
-  opacity: 0.88;
-  filter: drop-shadow(0 18px 26px rgba(0, 0, 0, 0.55)) brightness(0.9);
-  z-index: 1;
 }
 
 /* --------------------------------------------------------- Benefícios */

@@ -248,11 +248,17 @@ Nomes em minúsculas, sem acentos e com hífen — ajuda no Google Imagens.
 > Use apenas fotos suas ou com autorização de uso. Não copie imagens de sites de clubes,
 > marcas esportivas ou concorrentes.
 
-**Produtos já com foto real:** Flamengo titular, Palmeiras, Santa Cruz, Sport Recife, Real
-Madrid titular e segundo uniforme, Barcelona, Paris Saint-Germain, Bayern de Munique,
-Borussia Dortmund, Liverpool titular, Manchester City, Arsenal (uniforme alternativo),
-Brasil, Argentina, França e Portugal, a partir de fotos fornecidas com autorização do
-fornecedor. O fundo já veio recortado/transparente em alguns arquivos;
+**Produtos já com foto real:** Flamengo titular, Palmeiras, Grêmio, Santa Cruz, Sport
+Recife, Real Madrid titular e segundo uniforme, Barcelona, Paris Saint-Germain, Bayern de
+Munique, Borussia Dortmund, Liverpool titular, Manchester City, Manchester United, Arsenal
+(uniforme alternativo), Brasil, Argentina, França e Portugal, a partir de fotos fornecidas
+com autorização do fornecedor.
+
+> **Fique de olho em duplicatas:** o fornecedor já reenviou a mesma foto do Bayern de
+> Munique identificada com o nome de arquivo "bayer" (igual ao lote anterior — o
+> patrocinador Deutsche Telekom, exclusivo do Bayern, denuncia o erro no nome). Antes de
+> processar qualquer lote novo, confira se o time já tem foto real aplicada e compare a
+> pose/enquadramento antes de substituir — nem toda reenvio é upgrade. O fundo já veio recortado/transparente em alguns arquivos;
 nos demais, o fundo branco foi removido por detecção de componentes conectados (mesma
 técnica usada na logo).
 
@@ -501,7 +507,7 @@ Tudo que ainda é provisório está marcado no código com o comentário `PENDEN
 |---|---|---|
 | Número do WhatsApp | `config.js` → `whatsappNumber` | **fictício** (`5581999999999`) |
 | Produtos e estoque | `products.js` | demonstrativos |
-| Fotos dos produtos | `assets/images/products/` | 17 de 30 produtos com foto real (Flamengo, Palmeiras, Santa Cruz, Sport Recife, Real Madrid titular e segundo uniforme, Barcelona, PSG, Bayern de Munique, Borussia Dortmund, Liverpool, Manchester City, Arsenal alternativo, Brasil, Argentina, França, Portugal); os demais usam placeholder |
+| Fotos dos produtos | `assets/images/products/` | 19 de 30 produtos com foto real (Flamengo, Palmeiras, Grêmio, Santa Cruz, Sport Recife, Real Madrid titular e segundo uniforme, Barcelona, PSG, Bayern de Munique, Borussia Dortmund, Liverpool, Manchester City, Manchester United, Arsenal alternativo, Brasil, Argentina, França, Portugal); os demais usam placeholder |
 | Detalhes da camisa do Brasil | `assets/images/products/brasil/` | Só veio a foto do escudo; `-tecido` e `-detalhe` são recortes automáticos da frente. As de Argentina e França usam os três close-ups reais |
 | Uniforme do Arsenal alternativo | `products.js` → `arsenal-alternativo-2025-2026` | **PENDENTE:** confirmar com o fornecedor se é o segundo ou o terceiro uniforme (a foto é azul-marinho, não o titular vermelho) |
 | Logo, favicon, imagem social | `assets/images/brand/` | ✅ logo oficial aplicada |

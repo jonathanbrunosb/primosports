@@ -122,7 +122,7 @@ const PRODUCTS = [
     priceReference: 150, personalizationAvailable: true, deliveryType: 'Pronta entrega',
     featured: false, bestSeller: false, newArrival: false,
     description: 'Camisa titular do Grêmio em versão torcedor, com acabamento reforçado e caimento clássico.',
-    folder: 'gremio', slug: 'camisa-gremio-titular-2026', imagesPending: true,
+    folder: 'gremio', slug: 'camisa-gremio-titular-2026', imagesPending: false,
     sizes: sizes([A, 3], [A, 3], [A, 3], [L, 2], [X, 0])
   },
   {
@@ -215,7 +215,7 @@ const PRODUCTS = [
     priceReference: 150, personalizationAvailable: true, deliveryType: 'Sob encomenda',
     featured: false, bestSeller: false, newArrival: false,
     description: 'Camisa titular do Manchester United em versão torcedor, com corte clássico e tecido leve.',
-    folder: 'manchester-united', slug: 'camisa-manchester-united-titular-2025-2026', imagesPending: true,
+    folder: 'manchester-united', slug: 'camisa-manchester-united-titular-2025-2026', imagesPending: false,
     sizes: sizes([E, 0], [E, 0], [L, 1], [E, 0], [X, 0])
   },
   {

@@ -288,7 +288,8 @@ invisível é amarelado, então o vazamento criaria um halo em volta da peça.
 Cada card em "Escolha sua categoria" usa uma arte 4:3 em `assets/images/banners/`
 (`categoria-brasileirao.webp`, `categoria-europa.webp`, `categoria-selecoes.webp`,
 `categoria-retros.webp`), fornecidas pelo lojista e convertidas para WebP 960×720
-(~70–90 KB cada, contra 2,3 MB do PNG original).
+(~70–90 KB cada, contra 2,3 MB do PNG original). Os PNGs de origem não ficam no
+repositório — depois de convertidos, não têm mais uso no site.
 
 > O nome da categoria **já vem gravado na arte**. Por isso o `<h3>` do card fica com a
 > classe `sr-only`: continua existindo para leitores de tela e para o Google, mas não

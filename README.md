@@ -278,6 +278,11 @@ certo, e o algoritmo refina a borda. Detalhes que valem lembrar:
 - Em peças de cor forte, a franja clara que sobra na borda pode ser removida por
   saturação. **Não faça isso em camisa branca** — comeria a borda real do tecido.
 
+**Quando a foto já vem com alfa** (caso da camisa do Brasil), não segmente nada: use o
+alfa de origem. Só redimensione com o **alfa premultiplicado** — o resize comum trata RGB
+e alfa em separado e faz a cor da área transparente vazar na borda. Nessa foto o fundo
+invisível é amarelado, então o vazamento criaria um halo em volta da peça.
+
 ### Banners de categoria
 
 Cada card em "Escolha sua categoria" usa uma arte 4:3 em `assets/images/banners/`
@@ -494,7 +499,6 @@ Tudo que ainda é provisório está marcado no código com o comentário `PENDEN
 | Número do WhatsApp | `config.js` → `whatsappNumber` | **fictício** (`5581999999999`) |
 | Produtos e estoque | `products.js` | demonstrativos |
 | Fotos dos produtos | `assets/images/products/` | 14 de 30 produtos com foto real (Flamengo, Santa Cruz, Sport Recife, Real Madrid titular e segundo uniforme, Barcelona, PSG, Bayern de Munique, Borussia Dortmund, Liverpool, Arsenal alternativo, Brasil, Argentina, França); os demais usam placeholder |
-| Foto da camisa do Brasil | `assets/images/products/brasil/` | **Baixa resolução:** o original tem 569×822 px (as outras seleções têm 1000–1088 px) e é JPEG, não PNG, apesar da extensão. Foi ampliado para o padrão 1200×1200 e fica utilizável, mas vale reenviar em resolução maior |
 | Detalhes da camisa do Brasil | `assets/images/products/brasil/` | Só veio a foto do escudo; `-tecido` e `-detalhe` são recortes automáticos da frente. As de Argentina e França usam os três close-ups reais |
 | Uniforme do Arsenal alternativo | `products.js` → `arsenal-alternativo-2025-2026` | **PENDENTE:** confirmar com o fornecedor se é o segundo ou o terceiro uniforme (a foto é azul-marinho, não o titular vermelho) |
 | Logo, favicon, imagem social | `assets/images/brand/` | ✅ logo oficial aplicada |

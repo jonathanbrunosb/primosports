@@ -249,14 +249,23 @@ Nomes em minúsculas, sem acentos e com hífen — ajuda no Google Imagens.
 > marcas esportivas ou concorrentes.
 
 **Produtos já com foto real:** Flamengo titular, Santa Cruz, Sport Recife, Real Madrid
-titular e segundo uniforme, Barcelona, Paris Saint-Germain, Bayern de Munique e Borussia
-Dortmund, a partir de fotos fornecidas com autorização do fornecedor. O fundo já veio
-recortado/transparente em alguns arquivos; nos demais, o fundo branco foi removido por
-detecção de componentes conectados (mesma técnica usada na logo). Para esses produtos, as
-fotos `-escudo`, `-tecido` e `-detalhe` foram geradas por recorte automático da foto de
-frente (close-up de uma região do peito, do tecido e da gola) — não são fotos dedicadas de
-cada detalhe. Substitua por fotos reais desses close-ups quando tiver disponível, mantendo
-os mesmos nomes de arquivo.
+titular e segundo uniforme, Barcelona, Paris Saint-Germain, Bayern de Munique, Borussia
+Dortmund, Liverpool titular e Arsenal (uniforme alternativo), a partir de fotos fornecidas
+com autorização do fornecedor. O fundo já veio recortado/transparente em alguns arquivos;
+nos demais, o fundo branco foi removido por detecção de componentes conectados (mesma
+técnica usada na logo).
+
+Para a maioria desses produtos, as fotos `-escudo`, `-tecido` e `-detalhe` foram geradas
+por recorte automático da foto de frente — não são fotos dedicadas de cada detalhe.
+Substitua por close-ups reais quando tiver disponível, mantendo os mesmos nomes de arquivo.
+**Liverpool e Arsenal já usam close-ups reais** (os arquivos `zoom 1/2/3` enviados pelo
+fornecedor viraram, respectivamente, `-detalhe`, `-escudo` e `-tecido`) — é o padrão
+preferido para os próximos produtos.
+
+> Fotos com halo/sombra suave ao redor da peça exigem limiar mais permissivo no recorte,
+> seguido de fechamento morfológico para devolver as partes brancas da própria camisa
+> (gola, listras de ombro) que encostam na silhueta. Só o limiar conservador deixa auréola;
+> só o permissivo come as listras.
 
 ### Imagens do hero (primeira dobra da home)
 
@@ -451,7 +460,8 @@ Tudo que ainda é provisório está marcado no código com o comentário `PENDEN
 |---|---|---|
 | Número do WhatsApp | `config.js` → `whatsappNumber` | **fictício** (`5581999999999`) |
 | Produtos e estoque | `products.js` | demonstrativos |
-| Fotos dos produtos | `assets/images/products/` | 9 produtos com foto real (Flamengo, Santa Cruz, Sport Recife, Real Madrid titular e segundo uniforme, Barcelona, PSG, Bayern de Munique, Borussia Dortmund); os demais usam placeholder |
+| Fotos dos produtos | `assets/images/products/` | 11 de 30 produtos com foto real (Flamengo, Santa Cruz, Sport Recife, Real Madrid titular e segundo uniforme, Barcelona, PSG, Bayern de Munique, Borussia Dortmund, Liverpool, Arsenal alternativo); os demais usam placeholder |
+| Uniforme do Arsenal alternativo | `products.js` → `arsenal-alternativo-2025-2026` | **PENDENTE:** confirmar com o fornecedor se é o segundo ou o terceiro uniforme (a foto é azul-marinho, não o titular vermelho) |
 | Logo, favicon, imagem social | `assets/images/brand/` | ✅ logo oficial aplicada |
 | Razão social, CNPJ, endereço | `config.js` → `legal` | vazios (não exibidos) |
 | Regra para 4+ camisas | `config.js` → `pricing` | não definida (vai para consulta) |

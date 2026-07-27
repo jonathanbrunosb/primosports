@@ -32,6 +32,34 @@
 .btn-wa { background: #25d366; color: #04240f; }
 .btn-wa:hover { background: #1fb955; }
 
+/* Botões da capa: pílulas maiores, em caixa alta */
+.btn-hero {
+  min-height: 56px;
+  padding: 0.9rem 1.9rem;
+  font-size: clamp(0.9rem, 1.1vw, 1rem);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 800;
+}
+.btn-hero .btn-arrow {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  margin-left: 0.35rem;
+  border-radius: 50%;
+  background: rgba(5, 33, 10, 0.18);
+}
+.btn-hero .btn-arrow svg { width: 15px; height: 15px; }
+/* Variante contornada verde do WhatsApp (a referência não usa o verde cheio) */
+.btn-wa-outline {
+  background: transparent;
+  color: var(--neon);
+  border: 2px solid var(--neon);
+}
+.btn-wa-outline:hover { background: var(--accent-soft); }
+.btn-wa-outline svg { width: 20px; height: 20px; }
+
 /* --------------------------------------------------------- Card de produto */
 .product-grid {
   display: grid;

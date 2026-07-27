@@ -77,10 +77,8 @@
 
   <header class="site-header">
     <div class="container nav-wrap">
-      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mainNav"></button>
-
       <a class="brand" href="index.html" aria-label="Primo's Sports — página inicial">
-        <img src="assets/images/brand/primos-sports-shield.png" alt="" width="40" height="40" />
+        <img src="assets/images/brand/primos-sports-shield.png" alt="" width="56" height="56" />
         <span>PRIMO'S <b>SPORTS</b></span>
       </a>
 
@@ -109,7 +107,7 @@
         <button class="icon-btn" id="cartBtn" type="button" aria-label="Abrir orçamento" aria-controls="cartDrawer">
           <span class="count-badge" id="cartCount" hidden>0</span>
         </button>
-        <a class="icon-btn whatsapp-link" href="#" aria-label="Falar no WhatsApp" data-message="Gostaria de falar sobre as camisas."></a>
+        <button class="icon-btn menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mainNav"></button>
       </div>
     </div>
   </header>
@@ -138,10 +136,13 @@
         <div class="hero-copy reveal">
           <span class="eyebrow">Camisas que contam histórias</span>
           <h1>Vista sua <span>paixão.</span></h1>
-          <p>Camisas de clubes brasileiros, internacionais e seleções.</p>
+          <p>Camisas de clubes brasileiros,<br />internacionais e seleções.</p>
           <div class="hero-cta">
-            <a class="btn btn-primary" href="catalogo.html">Ver coleção</a>
-            <a class="btn btn-wa whatsapp-link" href="#" data-message="Quero comprar uma camisa.">Comprar pelo WhatsApp</a>
+            <a class="btn btn-primary btn-hero" href="catalogo.html">
+              Ver coleção
+              <span class="btn-arrow" data-icon="arrowRight" aria-hidden="true"></span>
+            </a>
+            <a class="btn btn-hero btn-wa-outline whatsapp-link" href="#" data-icon="whatsapp" data-message="Quero comprar uma camisa.">Comprar pelo WhatsApp</a>
           </div>
         </div>
 
@@ -175,11 +176,13 @@
 
       <!-- --------------------------------------------------- Benefícios -->
       <div class="hero-benefits">
-        <div class="container hero-benefits-grid">
-          <div class="hero-benefit" data-icon="truck"><b>Frete grátis</b><small>RMR Recife e RMR Maceió</small></div>
-          <div class="hero-benefit" data-icon="bolt"><b>Pagamento</b><small>Pix, crédito ou débito</small></div>
-          <div class="hero-benefit" data-icon="box"><b>Pronta entrega</b><small>Ou encomenda de 5 a 10 dias</small></div>
-          <div class="hero-benefit" data-icon="clock"><b>Atendimento</b><small>Domingo a domingo</small></div>
+        <div class="container">
+          <div class="hero-benefits-grid">
+            <div class="hero-benefit" data-icon="truck"><span><b>Frete grátis</b><small>RMR Recife e RMR Maceió</small></span></div>
+            <div class="hero-benefit" data-icon="card"><span><b>Pagamento</b><small>Pix, crédito ou débito</small></span></div>
+            <div class="hero-benefit" data-icon="box"><span><b>Pronta entrega</b><small>Ou encomenda de 5 a 10 dias</small></span></div>
+            <div class="hero-benefit" data-icon="headset"><span><b>Atendimento</b><small>Domingo a domingo</small></span></div>
+          </div>
         </div>
       </div>
     </section>
@@ -193,20 +196,20 @@
         </div>
         <div class="category-grid">
           <a class="category-card reveal" href="catalogo.html?categoria=Brasileir%C3%A3o">
-            <img class="category-art" src="assets/images/banners/categoria-brasileirao.svg" alt="Camisas de clubes do Brasileirão" width="480" height="360" loading="lazy" decoding="async" />
-            <div class="category-body"><h3>Brasileirão</h3><span>Ver coleção →</span></div>
+            <img class="category-art" src="assets/images/banners/categoria-brasileirao.webp" alt="Camisas de clubes do Brasileirão" width="960" height="720" loading="lazy" decoding="async" />
+            <div class="category-body"><h3 class="sr-only">Brasileirão</h3><span>Ver coleção →</span></div>
           </a>
           <a class="category-card reveal" href="catalogo.html?categoria=Europa">
-            <img class="category-art" src="assets/images/banners/categoria-europa.svg" alt="Camisas de clubes europeus" width="480" height="360" loading="lazy" decoding="async" />
-            <div class="category-body"><h3>Europa</h3><span>Ver coleção →</span></div>
+            <img class="category-art" src="assets/images/banners/categoria-europa.webp" alt="Camisas de clubes europeus" width="960" height="720" loading="lazy" decoding="async" />
+            <div class="category-body"><h3 class="sr-only">Europa</h3><span>Ver coleção →</span></div>
           </a>
           <a class="category-card reveal" href="catalogo.html?categoria=Sele%C3%A7%C3%B5es">
-            <img class="category-art" src="assets/images/banners/categoria-selecoes.svg" alt="Camisas de seleções nacionais" width="480" height="360" loading="lazy" decoding="async" />
-            <div class="category-body"><h3>Seleções</h3><span>Ver coleção →</span></div>
+            <img class="category-art" src="assets/images/banners/categoria-selecoes.webp" alt="Camisas de seleções nacionais" width="960" height="720" loading="lazy" decoding="async" />
+            <div class="category-body"><h3 class="sr-only">Seleções</h3><span>Ver coleção →</span></div>
           </a>
           <a class="category-card reveal" href="catalogo.html?categoria=Retr%C3%B4s">
-            <img class="category-art" src="assets/images/banners/categoria-retros.svg" alt="Camisas retrô de clubes e seleções" width="480" height="360" loading="lazy" decoding="async" />
-            <div class="category-body"><h3>Retrôs</h3><span>Ver coleção →</span></div>
+            <img class="category-art" src="assets/images/banners/categoria-retros.webp" alt="Camisas retrô de clubes e seleções" width="960" height="720" loading="lazy" decoding="async" />
+            <div class="category-body"><h3 class="sr-only">Retrôs</h3><span>Ver coleção →</span></div>
           </a>
         </div>
       </div>

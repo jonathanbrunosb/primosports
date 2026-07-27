@@ -250,8 +250,8 @@ Nomes em minúsculas, sem acentos e com hífen — ajuda no Google Imagens.
 
 **Produtos já com foto real:** Flamengo titular, Santa Cruz, Sport Recife, Real Madrid
 titular e segundo uniforme, Barcelona, Paris Saint-Germain, Bayern de Munique, Borussia
-Dortmund, Liverpool titular e Arsenal (uniforme alternativo), a partir de fotos fornecidas
-com autorização do fornecedor. O fundo já veio recortado/transparente em alguns arquivos;
+Dortmund, Liverpool titular, Arsenal (uniforme alternativo), Brasil, Argentina e França,
+a partir de fotos fornecidas com autorização do fornecedor. O fundo já veio recortado/transparente em alguns arquivos;
 nos demais, o fundo branco foi removido por detecção de componentes conectados (mesma
 técnica usada na logo).
 
@@ -266,6 +266,17 @@ preferido para os próximos produtos.
 > seguido de fechamento morfológico para devolver as partes brancas da própria camisa
 > (gola, listras de ombro) que encostam na silhueta. Só o limiar conservador deixa auréola;
 > só o permissivo come as listras.
+
+**Quando o limiar não resolve (camisas claras):** nas fotos das seleções o fundo tem sombra
+de estúdio que varia de 255 até ~176. Na camisa da Argentina, que é branca, essa faixa é a
+mesma do tecido — nenhum limiar separa os dois. Nesses casos use **GrabCut** semeado por
+cor: saturação alta ou pixel escuro marca tecido certo, a moldura externa marca fundo
+certo, e o algoritmo refina a borda. Detalhes que valem lembrar:
+
+- Some uma margem artificial antes de segmentar quando a foto é apertada (a do Brasil
+  encosta nas bordas), senão a moldura de "fundo certo" cai sobre a própria peça.
+- Em peças de cor forte, a franja clara que sobra na borda pode ser removida por
+  saturação. **Não faça isso em camisa branca** — comeria a borda real do tecido.
 
 ### Banners de categoria
 
@@ -476,7 +487,9 @@ Tudo que ainda é provisório está marcado no código com o comentário `PENDEN
 |---|---|---|
 | Número do WhatsApp | `config.js` → `whatsappNumber` | **fictício** (`5581999999999`) |
 | Produtos e estoque | `products.js` | demonstrativos |
-| Fotos dos produtos | `assets/images/products/` | 11 de 30 produtos com foto real (Flamengo, Santa Cruz, Sport Recife, Real Madrid titular e segundo uniforme, Barcelona, PSG, Bayern de Munique, Borussia Dortmund, Liverpool, Arsenal alternativo); os demais usam placeholder |
+| Fotos dos produtos | `assets/images/products/` | 14 de 30 produtos com foto real (Flamengo, Santa Cruz, Sport Recife, Real Madrid titular e segundo uniforme, Barcelona, PSG, Bayern de Munique, Borussia Dortmund, Liverpool, Arsenal alternativo, Brasil, Argentina, França); os demais usam placeholder |
+| Foto da camisa do Brasil | `assets/images/products/brasil/` | **Baixa resolução:** o original tem 569×822 px (as outras seleções têm 1000–1088 px) e é JPEG, não PNG, apesar da extensão. Foi ampliado para o padrão 1200×1200 e fica utilizável, mas vale reenviar em resolução maior |
+| Detalhes da camisa do Brasil | `assets/images/products/brasil/` | Só veio a foto do escudo; `-tecido` e `-detalhe` são recortes automáticos da frente. As de Argentina e França usam os três close-ups reais |
 | Uniforme do Arsenal alternativo | `products.js` → `arsenal-alternativo-2025-2026` | **PENDENTE:** confirmar com o fornecedor se é o segundo ou o terceiro uniforme (a foto é azul-marinho, não o titular vermelho) |
 | Logo, favicon, imagem social | `assets/images/brand/` | ✅ logo oficial aplicada |
 | Razão social, CNPJ, endereço | `config.js` → `legal` | vazios (não exibidos) |

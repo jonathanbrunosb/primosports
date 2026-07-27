@@ -310,7 +310,7 @@ const PRODUCTS = [
     priceReference: 150, personalizationAvailable: true, deliveryType: 'Pronta entrega',
     featured: true, bestSeller: true, newArrival: true,
     description: 'Camisa titular da Seleção Brasileira, versão torcedor, em tecido leve com escudo aplicado.',
-    folder: 'brasil', slug: 'camisa-brasil-titular-2026', imagesPending: true,
+    folder: 'brasil', slug: 'camisa-brasil-titular-2026', imagesPending: false,
     sizes: sizes([A, 6], [A, 8], [A, 5], [L, 2], [E, 0])
   },
   {
@@ -319,7 +319,7 @@ const PRODUCTS = [
     priceReference: 150, personalizationAvailable: true, deliveryType: 'Pronta entrega',
     featured: false, bestSeller: true, newArrival: true,
     description: 'Camisa titular da seleção da Argentina em versão torcedor, com listras clássicas.',
-    folder: 'argentina', slug: 'camisa-argentina-titular-2026', imagesPending: true,
+    folder: 'argentina', slug: 'camisa-argentina-titular-2026', imagesPending: false,
     sizes: sizes([A, 3], [A, 4], [A, 3], [E, 0], [X, 0])
   },
   {
@@ -337,7 +337,7 @@ const PRODUCTS = [
     priceReference: 150, personalizationAvailable: true, deliveryType: 'Sob encomenda',
     featured: false, bestSeller: false, newArrival: false,
     description: 'Camisa titular da seleção da França em versão torcedor, com escudo aplicado.',
-    folder: 'franca', slug: 'camisa-franca-titular-2026', imagesPending: true,
+    folder: 'franca', slug: 'camisa-franca-titular-2026', imagesPending: false,
     sizes: sizes([E, 0], [E, 0], [E, 0], [E, 0], [X, 0])
   },
   {

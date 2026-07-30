@@ -113,7 +113,7 @@ const PRODUCTS = [
     priceReference: 150, personalizationAvailable: true, deliveryType: 'Pronta entrega',
     featured: false, bestSeller: false, newArrival: true,
     description: 'Camisa titular do Vasco da Gama com a faixa tradicional, em tecido leve e confortável.',
-    folder: 'vasco', slug: 'camisa-vasco-titular-2026', imagesPending: true,
+    folder: 'vasco', slug: 'camisa-vasco-titular-2026', imagesPending: false,
     sizes: sizes([A, 3], [A, 4], [L, 1], [E, 0], [E, 0])
   },
   {

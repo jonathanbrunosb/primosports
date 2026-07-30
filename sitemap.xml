@@ -1,220 +1,220 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Ao configurar domínio próprio, substitua o host de todas as URLs. -->
+<!-- Host: primosports.net.br (domínio próprio, aguardando propagação de DNS — ver README). -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://jonathanbrunosb.github.io/primosports/</loc>
+    <loc>https://primosports.net.br/</loc>
     <lastmod>2026-07-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://jonathanbrunosb.github.io/primosports/catalogo.html</loc>
+    <loc>https://primosports.net.br/catalogo.html</loc>
     <lastmod>2026-07-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://jonathanbrunosb.github.io/primosports/entrega-e-pagamento.html</loc>
+    <loc>https://primosports.net.br/entrega-e-pagamento.html</loc>
     <lastmod>2026-07-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://jonathanbrunosb.github.io/primosports/trocas-e-devolucoes.html</loc>
+    <loc>https://primosports.net.br/trocas-e-devolucoes.html</loc>
     <lastmod>2026-07-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://jonathanbrunosb.github.io/primosports/politica-de-privacidade.html</loc>
+    <loc>https://primosports.net.br/politica-de-privacidade.html</loc>
     <lastmod>2026-07-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://jonathanbrunosb.github.io/primosports/termos-de-uso.html</loc>
+    <loc>https://primosports.net.br/termos-de-uso.html</loc>
     <lastmod>2026-07-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <!-- INÍCIO: páginas de produto geradas por scripts/generate-product-pages.mjs -->
   <url>
-    <loc>https://jonathanbrunosb.github.io/primosports/produtos/flamengo-titular-2026.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://primosports.net.br/produtos/flamengo-titular-2026.html</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jonathanbrunosb.github.io/primosports/produtos/palmeiras-titular-2026.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://primosports.net.br/produtos/palmeiras-titular-2026.html</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jonathanbrunosb.github.io/primosports/produtos/corinthians-titular-2026.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://primosports.net.br/produtos/corinthians-titular-2026.html</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jonathanbrunosb.github.io/primosports/produtos/sao-paulo-titular-2026.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://primosports.net.br/produtos/sao-paulo-titular-2026.html</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jonathanbrunosb.github.io/primosports/produtos/vasco-titular-2026.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://primosports.net.br/produtos/vasco-titular-2026.html</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jonathanbrunosb.github.io/primosports/produtos/gremio-titular-2026.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://primosports.net.br/produtos/gremio-titular-2026.html</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jonathanbrunosb.github.io/primosports/produtos/internacional-titular-2026.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://primosports.net.br/produtos/internacional-titular-2026.html</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jonathanbrunosb.github.io/primosports/produtos/flamengo-retro-1981.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://primosports.net.br/produtos/flamengo-retro-1981.html</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jonathanbrunosb.github.io/primosports/produtos/santa-cruz-titular-2025-2026.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://primosports.net.br/produtos/santa-cruz-titular-2025-2026.html</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jonathanbrunosb.github.io/primosports/produtos/sport-recife-titular-2025-2026.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://primosports.net.br/produtos/sport-recife-titular-2025-2026.html</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jonathanbrunosb.github.io/primosports/produtos/real-madrid-titular-2025-2026.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://primosports.net.br/produtos/real-madrid-titular-2025-2026.html</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jonathanbrunosb.github.io/primosports/produtos/real-madrid-jogador-2025-2026.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://primosports.net.br/produtos/real-madrid-jogador-2025-2026.html</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jonathanbrunosb.github.io/primosports/produtos/real-madrid-segundo-2025-2026.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://primosports.net.br/produtos/real-madrid-segundo-2025-2026.html</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jonathanbrunosb.github.io/primosports/produtos/barcelona-titular-2025-2026.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://primosports.net.br/produtos/barcelona-titular-2025-2026.html</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jonathanbrunosb.github.io/primosports/produtos/manchester-city-titular-2025-2026.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://primosports.net.br/produtos/manchester-city-titular-2025-2026.html</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jonathanbrunosb.github.io/primosports/produtos/manchester-united-titular-2025-2026.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://primosports.net.br/produtos/manchester-united-titular-2025-2026.html</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jonathanbrunosb.github.io/primosports/produtos/liverpool-titular-2025-2026.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://primosports.net.br/produtos/liverpool-titular-2025-2026.html</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jonathanbrunosb.github.io/primosports/produtos/arsenal-titular-2025-2026.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://primosports.net.br/produtos/arsenal-titular-2025-2026.html</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jonathanbrunosb.github.io/primosports/produtos/psg-titular-2025-2026.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://primosports.net.br/produtos/psg-titular-2025-2026.html</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jonathanbrunosb.github.io/primosports/produtos/bayern-munique-titular-2025-2026.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://primosports.net.br/produtos/bayern-munique-titular-2025-2026.html</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jonathanbrunosb.github.io/primosports/produtos/borussia-dortmund-titular-2025-2026.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://primosports.net.br/produtos/borussia-dortmund-titular-2025-2026.html</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jonathanbrunosb.github.io/primosports/produtos/arsenal-alternativo-2025-2026.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://primosports.net.br/produtos/arsenal-alternativo-2025-2026.html</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jonathanbrunosb.github.io/primosports/produtos/milan-titular-2025-2026.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://primosports.net.br/produtos/milan-titular-2025-2026.html</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jonathanbrunosb.github.io/primosports/produtos/inter-milao-titular-2025-2026.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://primosports.net.br/produtos/inter-milao-titular-2025-2026.html</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jonathanbrunosb.github.io/primosports/produtos/barcelona-retro-1999.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://primosports.net.br/produtos/barcelona-retro-1999.html</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jonathanbrunosb.github.io/primosports/produtos/brasil-titular-2026.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://primosports.net.br/produtos/brasil-titular-2026.html</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jonathanbrunosb.github.io/primosports/produtos/argentina-titular-2026.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://primosports.net.br/produtos/argentina-titular-2026.html</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jonathanbrunosb.github.io/primosports/produtos/portugal-titular-2026.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://primosports.net.br/produtos/portugal-titular-2026.html</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jonathanbrunosb.github.io/primosports/produtos/franca-titular-2026.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://primosports.net.br/produtos/franca-titular-2026.html</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jonathanbrunosb.github.io/primosports/produtos/brasil-retro-1994.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://primosports.net.br/produtos/brasil-retro-1994.html</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

@@ -31,7 +31,7 @@ import { createRequire } from 'node:module';
 
 const ROOT = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const OUT_DIR = path.join(ROOT, 'produtos');
-const SITE_URL = 'https://jonathanbrunosb.github.io/primosports/';
+const SITE_URL = 'https://primosports.net.br/';
 const require = createRequire(import.meta.url);
 
 /**

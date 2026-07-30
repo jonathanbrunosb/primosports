@@ -385,25 +385,29 @@ dentro de `404.html`.
 
 ## Domínio próprio e HTTPS
 
-1. Compre o domínio e, no painel do provedor de DNS, crie:
-   - **`www`** → registro `CNAME` apontando para `<usuario>.github.io`;
-   - **domínio raiz** (`primossports.com.br`) → quatro registros `A` para os IPs do GitHub
+O domínio **`primosports.net.br`** já está definido no código (arquivo `/CNAME`,
+`seo.siteUrl`, `sitemap.xml`, `robots.txt` e o `<link rel="canonical">`/`og:url` de cada
+página). **Falta só o DNS** — o site continua servido normalmente em
+`jonathanbrunosb.github.io/primosports` até isso ser feito, então não há risco de sair do
+ar enquanto o domínio não resolve.
+
+1. No painel do registrador do domínio, crie:
+   - **`www`** → registro `CNAME` apontando para `jonathanbrunosb.github.io`;
+   - **domínio raiz** (`primosports.net.br`) → quatro registros `A` para os IPs do GitHub
      Pages: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-     (ou um `ALIAS`/`ANAME` para `<usuario>.github.io`, se o provedor suportar);
-2. Em **Settings → Pages → Custom domain**, informe o domínio e salve. O GitHub cria o arquivo
-   `CNAME` no repositório automaticamente — **não crie esse arquivo manualmente antes de ter
-   o domínio**, senão o site sai do ar;
-3. Aguarde a validação e marque **Enforce HTTPS** (o certificado é emitido de graça);
-4. Escolha **um** endereço canônico (com `www` ou sem) e deixe o outro apenas redirecionando.
-   Apontar os dois para destinos diferentes é o que costuma causar loop de redirecionamento.
+     (ou um `ALIAS`/`ANAME` para `jonathanbrunosb.github.io`, se o registrador suportar);
+2. Em **Settings → Pages → Custom domain** do repositório, informe `primosports.net.br` e
+   salve (o arquivo `/CNAME` já existe no código, então o GitHub só precisa validar o DNS);
+3. Aguarde a validação (pode levar até 24h) e marque **Enforce HTTPS** assim que o botão
+   ficar disponível — o certificado é emitido de graça pelo GitHub;
+4. Escolha **um** endereço canônico (`primosports.net.br` ou `www.primosports.net.br`) e
+   deixe o outro apenas redirecionando. Apontar os dois para destinos diferentes é o que
+   costuma causar loop de redirecionamento — o código usa a raiz sem `www` como canônico.
 
-Depois de configurar o domínio, atualize também:
-
-- `seo.siteUrl` em `assets/js/config.js`;
-- as tags `<link rel="canonical">` e `og:url` de cada `.html`;
-- as URLs de `sitemap.xml` e `robots.txt`;
-- a URL do workflow `.github/workflows/uptime.yml`;
-- a constante `REPO_NAME` em `404.html` (com domínio próprio a raiz passa a ser `/`).
+Depois que o DNS propagar e o HTTPS estiver ativo, submeta a nova propriedade
+`primosports.net.br` no Google Search Console (a antiga, se existir, pode ficar como
+"mudança de endereço" — ver seção seguinte) e confira que `sitemap.xml` carrega em
+`https://primosports.net.br/sitemap.xml` sem erro de certificado.
 
 ---
 

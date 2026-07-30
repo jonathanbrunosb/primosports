@@ -174,6 +174,15 @@ const PRODUCTS = [
     sizes: sizes([A, 3], [A, 5], [L, 2], [E, 0], [X, 0])
   },
   {
+    id: 'real-madrid-titular-2026-2027', sku: 'PS-RMA-H-2627', team: 'Real Madrid', season: '2026/2027',
+    model: 'Titular', category: 'Europa', subcategory: 'Espanha', version: 'Torcedor',
+    priceReference: 150, personalizationAvailable: true, deliveryType: 'Sob encomenda',
+    featured: false, bestSeller: false, newArrival: true,
+    description: 'Camisa titular do Real Madrid, temporada 2026/2027, versão torcedor, em tecido dry premium com escudo bordado.',
+    folder: 'real-madrid', slug: 'camisa-real-madrid-titular-2026-2027', imagesPending: false,
+    sizes: sizes([E, 0], [E, 0], [E, 0], [E, 0], [E, 0])
+  },
+  {
     id: 'real-madrid-jogador-2025-2026', sku: 'PS-RMA-HP-2526', team: 'Real Madrid', season: '2025/2026',
     model: 'Titular', category: 'Europa', subcategory: 'Espanha', version: 'Jogador',
     priceReference: 150, personalizationAvailable: true, deliveryType: 'Sob encomenda',

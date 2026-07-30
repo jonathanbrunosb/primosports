@@ -249,10 +249,18 @@ Nomes em minúsculas, sem acentos e com hífen — ajuda no Google Imagens.
 > marcas esportivas ou concorrentes.
 
 **Produtos já com foto real:** Flamengo titular, Palmeiras, Grêmio, São Paulo, Santa Cruz,
-Sport Recife, Real Madrid titular e segundo uniforme, Barcelona, Paris Saint-Germain,
-Bayern de Munique, Borussia Dortmund, Liverpool titular, Manchester City, Manchester
-United, Arsenal (uniforme alternativo), Brasil, Argentina, França e Portugal, a partir de
-fotos fornecidas com autorização do fornecedor.
+Sport Recife, Real Madrid titular 2025/2026 e 2026/2027, Real Madrid segundo uniforme,
+Barcelona, Paris Saint-Germain, Bayern de Munique, Borussia Dortmund, Liverpool titular,
+Manchester City, Manchester United, Arsenal (uniforme alternativo), Brasil, Argentina,
+França e Portugal, a partir de fotos fornecidas com autorização do fornecedor.
+
+> **Real Madrid tem duas temporadas do titular.** A foto aplicada originalmente como
+> "titular 2025/2026" era, na verdade, o uniforme da temporada 2026/2027 (confirmado com
+> o lojista). Ao chegar a foto correta de 2025/2026, o produto antigo foi renomeado para
+> `real-madrid-titular-2026-2027` (arquivos de imagem copiados com o novo slug, não
+> movidos, então nada quebra) e o id `real-madrid-titular-2025-2026` passou a apontar
+> para a foto certa. Sempre confira a temporada de cada uniforme com o lojista antes de
+> aplicar — o nome do arquivo do fornecedor nem sempre indica a temporada real.
 
 > **Fique de olho em duplicatas:** o fornecedor já reenviou a mesma foto do Bayern de
 > Munique identificada com o nome de arquivo "bayer" (igual ao lote anterior — o
@@ -518,7 +526,7 @@ Tudo que ainda é provisório está marcado no código com o comentário `PENDEN
 |---|---|---|
 | Número do WhatsApp | `config.js` → `whatsappNumber` | ✅ número oficial (81) 97401-7011 |
 | Produtos e estoque | `products.js` | demonstrativos |
-| Fotos dos produtos | `assets/images/products/` | 20 de 30 produtos com foto real (Flamengo, Palmeiras, Grêmio, São Paulo, Santa Cruz, Sport Recife, Real Madrid titular e segundo uniforme, Barcelona, PSG, Bayern de Munique, Borussia Dortmund, Liverpool, Manchester City, Manchester United, Arsenal alternativo, Brasil, Argentina, França, Portugal); os demais usam placeholder |
+| Fotos dos produtos | `assets/images/products/` | 21 de 31 produtos com foto real (Flamengo, Palmeiras, Grêmio, São Paulo, Santa Cruz, Sport Recife, Real Madrid titular 2025/2026 e 2026/2027, Real Madrid segundo uniforme, Barcelona, PSG, Bayern de Munique, Borussia Dortmund, Liverpool, Manchester City, Manchester United, Arsenal alternativo, Brasil, Argentina, França, Portugal); os demais usam placeholder |
 | Detalhes da camisa do Brasil | `assets/images/products/brasil/` | Só veio a foto do escudo; `-tecido` e `-detalhe` são recortes automáticos da frente. As de Argentina e França usam os três close-ups reais |
 | Uniforme do Arsenal alternativo | `products.js` → `arsenal-alternativo-2025-2026` | **PENDENTE:** confirmar com o fornecedor se é o segundo ou o terceiro uniforme (a foto é azul-marinho, não o titular vermelho) |
 | Logo, favicon, imagem social | `assets/images/brand/` | ✅ logo oficial aplicada |

@@ -15,13 +15,12 @@ const BUSINESS_CONFIG = {
   tagline: 'Vista sua paixão. Jogue com estilo.',
 
   /* -----------------------------------------------------------------------
-     PENDENTE: número fictício de demonstração.
-     Substituir pelo WhatsApp Business oficial ANTES de publicar.
-     Formato: código do país + DDD + número, apenas dígitos. Ex.: 5581988887777
+     Número oficial do WhatsApp Business.
+     Formato: código do país + DDD + número, apenas dígitos.
      Este é o ÚNICO lugar do projeto onde o número deve existir.
      --------------------------------------------------------------------- */
-  whatsappNumber: '5581999999999',
-  whatsappIsPlaceholder: true, // deixar `true` enquanto o número acima for fictício
+  whatsappNumber: '5581974017011',
+  whatsappIsPlaceholder: false,
 
   instagramHandle: '@primos.sports',
   instagramUrl: 'https://www.instagram.com/primos.sports',

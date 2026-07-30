@@ -516,7 +516,7 @@ Tudo que ainda é provisório está marcado no código com o comentário `PENDEN
 
 | O que | Onde | Situação |
 |---|---|---|
-| Número do WhatsApp | `config.js` → `whatsappNumber` | **fictício** (`5581999999999`) |
+| Número do WhatsApp | `config.js` → `whatsappNumber` | ✅ número oficial (81) 97401-7011 |
 | Produtos e estoque | `products.js` | demonstrativos |
 | Fotos dos produtos | `assets/images/products/` | 19 de 30 produtos com foto real (Flamengo, Palmeiras, Grêmio, Santa Cruz, Sport Recife, Real Madrid titular e segundo uniforme, Barcelona, PSG, Bayern de Munique, Borussia Dortmund, Liverpool, Manchester City, Manchester United, Arsenal alternativo, Brasil, Argentina, França, Portugal); os demais usam placeholder |
 | Detalhes da camisa do Brasil | `assets/images/products/brasil/` | Só veio a foto do escudo; `-tecido` e `-detalhe` são recortes automáticos da frente. As de Argentina e França usam os três close-ups reais |

@@ -125,25 +125,7 @@ const PRODUCTS = [
     folder: 'gremio', slug: 'camisa-gremio-titular-2026', imagesPending: false,
     sizes: sizes([A, 3], [A, 3], [A, 3], [L, 2], [X, 0])
   },
-  {
-    id: 'internacional-titular-2026', sku: 'PS-INT-H-2026', team: 'Internacional', season: '2026',
-    model: 'Titular', category: 'Brasileirão', subcategory: 'Brasil', version: 'Torcedor',
-    priceReference: 150, personalizationAvailable: true, deliveryType: 'Sob encomenda',
-    featured: false, bestSeller: false, newArrival: false,
-    description: 'Camisa titular do Internacional, versão torcedor, com tecido leve e escudo aplicado.',
-    folder: 'internacional', slug: 'camisa-internacional-titular-2026', imagesPending: true,
-    sizes: sizes([E, 0], [A, 2], [E, 0], [E, 0], [X, 0])
-  },
-  {
-    id: 'flamengo-retro-1981', sku: 'PS-FLA-R-1981', team: 'Flamengo', season: 'Retrô 1981',
-    model: 'Retrô', category: 'Retrôs', subcategory: 'Brasil', version: 'Torcedor',
-    priceReference: 150, personalizationAvailable: false, deliveryType: 'Sob encomenda',
-    featured: true, bestSeller: false, newArrival: false,
-    description: 'Modelo retrô inspirado nos uniformes clássicos do Flamengo, com corte tradicional e gola em contraste.',
-    folder: 'flamengo', slug: 'camisa-flamengo-retro-1981', imagesPending: true,
-    sizes: sizes([E, 0], [E, 0], [L, 1], [E, 0], [X, 0])
-  },
-
+    
   {
     id: 'santa-cruz-titular-2025-2026', sku: 'PS-SCR-H-2526', team: 'Santa Cruz', season: '2025/2026',
     model: 'Titular', category: 'Brasileirão', subcategory: 'Brasil', version: 'Torcedor',
@@ -182,16 +164,7 @@ const PRODUCTS = [
     folder: 'real-madrid', slug: 'camisa-real-madrid-titular-2026-2027', imagesPending: false,
     sizes: sizes([E, 0], [E, 0], [E, 0], [E, 0], [E, 0])
   },
-  {
-    id: 'real-madrid-jogador-2025-2026', sku: 'PS-RMA-HP-2526', team: 'Real Madrid', season: '2025/2026',
-    model: 'Titular', category: 'Europa', subcategory: 'Espanha', version: 'Jogador',
-    priceReference: 150, personalizationAvailable: true, deliveryType: 'Sob encomenda',
-    featured: false, bestSeller: false, newArrival: true,
-    description: 'Versão jogador da camisa titular do Real Madrid, com caimento mais ajustado e tecido de maior performance.',
-    folder: 'real-madrid', slug: 'camisa-real-madrid-jogador-2025-2026', imagesPending: true,
-    sizes: sizes([E, 0], [E, 0], [E, 0], [E, 0], [E, 0])
-  },
-  {
+    {
     id: 'real-madrid-segundo-2025-2026', sku: 'PS-RMA-A-2526', team: 'Real Madrid', season: '2025/2026',
     model: 'Segundo uniforme', category: 'Europa', subcategory: 'Espanha', version: 'Torcedor',
     priceReference: 150, personalizationAvailable: true, deliveryType: 'Sob encomenda',
@@ -236,16 +209,7 @@ const PRODUCTS = [
     folder: 'liverpool', slug: 'camisa-liverpool-titular-2025-2026', imagesPending: false,
     sizes: sizes([A, 3], [A, 3], [A, 4], [L, 1], [E, 0])
   },
-  {
-    id: 'arsenal-titular-2025-2026', sku: 'PS-ARS-H-2526', team: 'Arsenal', season: '2025/2026',
-    model: 'Titular', category: 'Europa', subcategory: 'Inglaterra', version: 'Torcedor',
-    priceReference: 150, personalizationAvailable: true, deliveryType: 'Pronta entrega',
-    featured: false, bestSeller: false, newArrival: true,
-    description: 'Camisa titular do Arsenal em versão torcedor, com tecido leve e caimento confortável.',
-    folder: 'arsenal', slug: 'camisa-arsenal-titular-2025-2026', imagesPending: true,
-    sizes: sizes([A, 2], [A, 3], [L, 2], [E, 0], [E, 0])
-  },
-  {
+    {
     id: 'psg-titular-2025-2026', sku: 'PS-PSG-H-2526', team: 'Paris Saint-Germain', season: '2025/2026',
     model: 'Titular', category: 'Europa', subcategory: 'França', version: 'Torcedor',
     priceReference: 150, personalizationAvailable: true, deliveryType: 'Pronta entrega',
@@ -284,25 +248,7 @@ const PRODUCTS = [
     folder: 'arsenal', slug: 'camisa-arsenal-alternativo-2025-2026', imagesPending: false,
     sizes: sizes([E, 0], [E, 0], [E, 0], [E, 0], [E, 0])
   },
-  {
-    id: 'milan-titular-2025-2026', sku: 'PS-MIL-H-2526', team: 'Milan', season: '2025/2026',
-    model: 'Titular', category: 'Europa', subcategory: 'Itália', version: 'Torcedor',
-    priceReference: 150, personalizationAvailable: true, deliveryType: 'Pronta entrega',
-    featured: false, bestSeller: false, newArrival: false,
-    description: 'Camisa titular do Milan, versão torcedor, com listras clássicas e tecido leve.',
-    folder: 'milan', slug: 'camisa-milan-titular-2025-2026', imagesPending: true,
-    sizes: sizes([A, 2], [A, 3], [L, 1], [E, 0], [X, 0])
-  },
-  {
-    id: 'inter-milao-titular-2025-2026', sku: 'PS-INM-H-2526', team: 'Inter de Milão', season: '2025/2026',
-    model: 'Titular', category: 'Europa', subcategory: 'Itália', version: 'Torcedor',
-    priceReference: 150, personalizationAvailable: true, deliveryType: 'Sob encomenda',
-    featured: false, bestSeller: false, newArrival: false,
-    description: 'Camisa titular da Inter de Milão em versão torcedor, com acabamento premium e corte confortável.',
-    folder: 'inter-milao', slug: 'camisa-inter-milao-titular-2025-2026', imagesPending: true,
-    sizes: sizes([E, 0], [E, 0], [E, 0], [E, 0], [X, 0])
-  },
-  {
+      {
     id: 'barcelona-retro-1999', sku: 'PS-BAR-R-1999', team: 'Barcelona', season: 'Retrô 1999',
     model: 'Retrô', category: 'Retrôs', subcategory: 'Espanha', version: 'Torcedor',
     priceReference: 150, personalizationAvailable: false, deliveryType: 'Sob encomenda',
@@ -349,16 +295,7 @@ const PRODUCTS = [
     folder: 'franca', slug: 'camisa-franca-titular-2026', imagesPending: false,
     sizes: sizes([E, 0], [E, 0], [E, 0], [E, 0], [X, 0])
   },
-  {
-    id: 'brasil-retro-1994', sku: 'PS-BRA-R-1994', team: 'Brasil', season: 'Retrô 1994',
-    model: 'Retrô', category: 'Retrôs', subcategory: 'América do Sul', version: 'Torcedor',
-    priceReference: 150, personalizationAvailable: false, deliveryType: 'Sob encomenda',
-    featured: true, bestSeller: false, newArrival: false,
-    description: 'Modelo retrô inspirado nos uniformes clássicos da Seleção Brasileira, com corte tradicional.',
-    folder: 'brasil', slug: 'camisa-brasil-retro-1994', imagesPending: true,
-    sizes: sizes([E, 0], [L, 1], [E, 0], [E, 0], [X, 0])
-  }
-];
+  ];
 
 /* Completa cada produto com os campos derivados, evitando repetição no cadastro. */
 PRODUCTS.forEach((p) => {

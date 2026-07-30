@@ -526,7 +526,8 @@ Tudo que ainda é provisório está marcado no código com o comentário `PENDEN
 |---|---|---|
 | Número do WhatsApp | `config.js` → `whatsappNumber` | ✅ número oficial (81) 97401-7011 |
 | Produtos e estoque | `products.js` | demonstrativos |
-| Fotos dos produtos | `assets/images/products/` | 21 de 31 produtos com foto real (Flamengo, Palmeiras, Grêmio, São Paulo, Santa Cruz, Sport Recife, Real Madrid titular 2025/2026 e 2026/2027, Real Madrid segundo uniforme, Barcelona, PSG, Bayern de Munique, Borussia Dortmund, Liverpool, Manchester City, Manchester United, Arsenal alternativo, Brasil, Argentina, França, Portugal); os demais usam placeholder |
+| Fotos dos produtos | `assets/images/products/` | 21 de 24 produtos com foto real (Flamengo, Palmeiras, Grêmio, São Paulo, Santa Cruz, Sport Recife, Real Madrid titular 2025/2026 e 2026/2027, Real Madrid segundo uniforme, Barcelona, PSG, Bayern de Munique, Borussia Dortmund, Liverpool, Manchester City, Manchester United, Arsenal alternativo, Brasil, Argentina, França, Portugal); os demais usam placeholder |
+| Produtos removidos do catálogo | — | Real Madrid versão Jogador, Arsenal titular (duplicava o alternativo, que tem foto real), Brasil Retrô 1994, Flamengo Retrô 1981, Inter de Milão, Internacional, Milan — todos sem foto real e removidos a pedido do lojista |
 | Detalhes da camisa do Brasil | `assets/images/products/brasil/` | Só veio a foto do escudo; `-tecido` e `-detalhe` são recortes automáticos da frente. As de Argentina e França usam os três close-ups reais |
 | Uniforme do Arsenal alternativo | `products.js` → `arsenal-alternativo-2025-2026` | **PENDENTE:** confirmar com o fornecedor se é o segundo ou o terceiro uniforme (a foto é azul-marinho, não o titular vermelho) |
 | Logo, favicon, imagem social | `assets/images/brand/` | ✅ logo oficial aplicada |

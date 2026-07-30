@@ -104,7 +104,7 @@ const PRODUCTS = [
     priceReference: 150, personalizationAvailable: true, deliveryType: 'Sob encomenda',
     featured: false, bestSeller: false, newArrival: true,
     description: 'Camisa titular do São Paulo com listras clássicas, tecido respirável e escudo aplicado.',
-    folder: 'sao-paulo', slug: 'camisa-sao-paulo-titular-2026', imagesPending: true,
+    folder: 'sao-paulo', slug: 'camisa-sao-paulo-titular-2026', imagesPending: false,
     sizes: sizes([E, 0], [E, 0], [E, 0], [E, 0], [E, 0])
   },
   {

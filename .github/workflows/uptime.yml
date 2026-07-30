@@ -18,6 +18,9 @@ jobs:
     steps:
       - name: Checar página inicial
         run: |
+          # PENDENTE: trocar para "https://primosports.net.br/" assim que o DNS do
+          # domínio próprio propagar e o HTTPS estiver ativo (ver README). Até lá,
+          # este endereço do GitHub Pages é o que está no ar de verdade.
           URL="https://jonathanbrunosb.github.io/primosports/"
           echo "Verificando $URL"
           CODE=$(curl -s -o /dev/null -w "%{http_code}" --max-time 30 --retry 2 "$URL")

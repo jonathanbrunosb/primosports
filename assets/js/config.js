@@ -88,9 +88,9 @@ const BUSINESS_CONFIG = {
     defaultTitle: "Camisas de Times e Seleções | Primo's Sports",
     defaultDescription:
       'Camisas de clubes brasileiros, internacionais e seleções. Atendimento em Pernambuco e Alagoas, com entrega grátis nas regiões metropolitanas de Recife e Maceió.',
-    // PENDENTE: trocar pela URL final quando o domínio for definido.
-    // Enquanto for GitHub Pages: https://<usuario>.github.io/primosports/
-    siteUrl: 'https://jonathanbrunosb.github.io/primosports/',
+    // Domínio próprio. Exige o arquivo /CNAME (na raiz do repositório) e o DNS
+    // do registrador apontando para o GitHub Pages — ver README.
+    siteUrl: 'https://primosports.net.br/',
     shareImage: 'assets/images/brand/social-share-primos-sports.jpg',
     locale: 'pt_BR'
   },

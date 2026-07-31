@@ -283,6 +283,15 @@ preferido para os próximos produtos.
 > (gola, listras de ombro) que encostam na silhueta. Só o limiar conservador deixa auréola;
 > só o permissivo come as listras.
 
+**Sombra de estúdio solta abaixo da barra (não confundir com halo):** diferente do halo na
+borda da própria peça, aqui a foto tem uma sombra arredondada projetada no chão logo
+abaixo do tecido, disforme e mais larga que a camisa. Ela às vezes sobrevive ao recorte
+porque tem a mesma largura aproximada do tronco naquele ponto, então o teste "está dentro
+da largura esperada" não pega. O jeito que funcionou (camisa do Náutico): medir a largura
+da máscara linha a linha a partir do pico do tronco e cortar tudo abaixo do primeiro ponto,
+descendo, em que a largura **volta a crescer** — sombra arredondada é sempre mais larga que
+o tecido reto da barra, então esse crescimento é a assinatura dela.
+
 **Quando o limiar não resolve (camisas claras):** nas fotos das seleções o fundo tem sombra
 de estúdio que varia de 255 até ~176. Na camisa da Argentina, que é branca, essa faixa é a
 mesma do tecido — nenhum limiar separa os dois. Nesses casos use **GrabCut** semeado por
@@ -527,7 +536,7 @@ Tudo que ainda é provisório está marcado no código com o comentário `PENDEN
 |---|---|---|
 | Número do WhatsApp | `config.js` → `whatsappNumber` | ✅ número oficial (81) 97401-7011 |
 | Produtos e estoque | `products.js` | demonstrativos |
-| Fotos dos produtos | `assets/images/products/` | 22 de 24 produtos com foto real (Flamengo, Palmeiras, Grêmio, São Paulo, Vasco da Gama, Santa Cruz, Sport Recife, Real Madrid titular 2025/2026 e 2026/2027, Real Madrid segundo uniforme, Barcelona, PSG, Bayern de Munique, Borussia Dortmund, Liverpool, Manchester City, Manchester United, Arsenal alternativo, Brasil, Argentina, França, Portugal); os demais usam placeholder |
+| Fotos dos produtos | `assets/images/products/` | 23 de 25 produtos com foto real (Flamengo, Palmeiras, Grêmio, São Paulo, Vasco da Gama, Náutico, Santa Cruz, Sport Recife, Real Madrid titular 2025/2026 e 2026/2027, Real Madrid segundo uniforme, Barcelona, PSG, Bayern de Munique, Borussia Dortmund, Liverpool, Manchester City, Manchester United, Arsenal alternativo, Brasil, Argentina, França, Portugal); os demais usam placeholder |
 | Produtos removidos do catálogo | — | Real Madrid versão Jogador, Arsenal titular (duplicava o alternativo, que tem foto real), Brasil Retrô 1994, Flamengo Retrô 1981, Inter de Milão, Internacional, Milan — todos sem foto real e removidos a pedido do lojista |
 | Detalhes da camisa do Brasil | `assets/images/products/brasil/` | Só veio a foto do escudo; `-tecido` e `-detalhe` são recortes automáticos da frente. As de Argentina e França usam os três close-ups reais |
 | Uniforme do Arsenal alternativo | `products.js` → `arsenal-alternativo-2025-2026` | **PENDENTE:** confirmar com o fornecedor se é o segundo ou o terceiro uniforme (a foto é azul-marinho, não o titular vermelho) |

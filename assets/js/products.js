@@ -136,6 +136,15 @@ const PRODUCTS = [
     sizes: sizes([E, 0], [E, 0], [E, 0], [E, 0], [E, 0])
   },
   {
+    id: 'nautico-titular-2026', sku: 'PS-NTC-H-2026', team: 'Náutico', season: '2026',
+    model: 'Titular', category: 'Brasileirão', subcategory: 'Brasil', version: 'Torcedor',
+    priceReference: 150, personalizationAvailable: true, deliveryType: 'Sob encomenda',
+    featured: false, bestSeller: false, newArrival: true,
+    description: 'Camisa titular do Náutico em versão torcedor, com tecido leve e escudo aplicado.',
+    folder: 'nautico', slug: 'camisa-nautico-titular-2026', imagesPending: false,
+    sizes: sizes([E, 0], [E, 0], [E, 0], [E, 0], [E, 0])
+  },
+  {
     id: 'sport-recife-titular-2025-2026', sku: 'PS-SPT-H-2526', team: 'Sport Recife', season: '2025/2026',
     model: 'Titular', category: 'Brasileirão', subcategory: 'Brasil', version: 'Torcedor',
     priceReference: 150, personalizationAvailable: true, deliveryType: 'Sob encomenda',
